@@ -1,0 +1,149 @@
+﻿
+    select, input {
+        direction: rtl;
+    }
+
+        select[name=rgn], select[name=man], select[name=mdl] {
+            width: 140px;
+        }
+
+        input[name=pmin], input[name=pmax] {
+            width: 90px;
+        }
+
+        select[name=ymin], select[name=ymax] {
+            width: 60px;
+        }
+
+        select[name=gt] {
+            width: 70px;
+        }
+
+        input[name=txt] {
+            width: 140px;
+        }
+
+        input[type=submit] {
+            width: 125px;
+            height: 65px;
+        }
+
+    .filter-outer-tbl {
+        border-collapse: collapse;
+        text-align: center;
+        vertical-align: central;
+        background: #808080;
+    }
+
+        .filter-outer-tbl td {
+            margin: 0 0 0 2px;
+        }
+
+    .adv-filter-opt {
+        float: left;
+    }
+
+    .simple-filter-opt {
+        float: left;
+        margin: 0 0 0 3px;
+    }
+
+        .adv-filter-opt a, .simple-filter-opt a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            background: #808080;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border: 1px solid #808080;
+            border-bottom: none;
+        }
+
+    .filter-field-title {
+        font-size: 12px;
+    }
+
+    .filter-upper-row {
+    }
+
+    .items-tbl {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 30px;
+        border-collapse: collapse;
+    }
+
+        .items-tbl tbody tr {
+            cursor: pointer;
+        }
+
+            .items-tbl tbody tr:hover {
+                background: #b9b9b9;
+            }
+
+    .paging {
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+        .paging a {
+            text-align: center;
+            display: inline-block;
+            width: 25px;
+            color: white;
+            background: #414141;
+            border: 1px solid #b5b5b5;
+            border-radius: 10px;
+            margin: 0 auto;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+            .paging a:hover {
+                background: #ff6a00;
+            }
+
+            .paging a.selected {
+                background: #e5b363;
+            }
+
+    .fav-checked {
+        color: black;
+        background-color:black !Important;
+    }
+  select[name=rgn], select[name=man], select[name=mdl] {
+            width: 140px;
+        }
+
+        input[name=pmin], input[name=pmax] {
+            width: 90px;
+        }
+
+        select[name=ymin], select[name=ymax] {
+            width: 60px;
+        }
+       
+
+        select[name=gt] {
+            width: 70px;
+        }
+
+        input[name=txt] {
+            width: 140px;
+        }
+        .post-details{
+            width:190px;
+
+        }
+        .num{
+          width: 42px;
+height: 243px;
+}
+
+        .post-details{
+            background-color:gray;
+
+
+        }

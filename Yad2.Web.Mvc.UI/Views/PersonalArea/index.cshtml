@@ -1,0 +1,1104 @@
+﻿@{
+    ViewBag.Title = "index";
+}
+<style>
+    .pirsum-modaa {
+        width: 919px;
+        height: 1100px;
+        border: solid 1px;
+        border-radius: 5px;
+        background-color: rgb(239, 238, 238);
+        box-shadow: 2px -1px 12px 0px;
+        margin-top: 85px;
+    }
+
+    .post-details {
+        width: 300px;
+        height: 737px;
+        border: solid 1px;
+        float: right;
+        margin-top: 10px;
+        margin-right: 73px;
+        border-radius: 5px;
+        box-shadow: 1px 3px 1px 2px;
+        border-top: solid 1px;
+    }
+
+    .post-head {
+        text-align: center;
+        /* border: solid 1px; */
+        background-color: rgb(110, 219, 19);
+        color: rgb(255, 255, 255);
+        font-family: -webkit-pictograph;
+        border: solid 1px;
+        border-color: rgb(255, 249, 249);
+        border-bottom: solid 2px;
+        border-radius: 6px;
+    }
+
+    .enter-details {
+    }
+
+    .details-input select {
+        /*border-color: rgb(20, 176, 9);*/
+    }
+
+    .details-input input {
+        /*border-color: rgb(10, 171, 0);*/
+    }
+
+    .details-input td {
+        margin-top: 10px;
+        float: right;
+        margin-right: 10px;
+        color: rgb(13, 151, 16);
+    }
+
+    .details-input select {
+        width: 190px;
+        height: 20px;
+    }
+
+    .conect {
+        width: 300px;
+        height: 300px;
+        border: solid 1px;
+        float: left;
+        margin-top: 10px;
+        margin-left: 151px;
+        border-top: solid 1px;
+        border-radius: 5px;
+        border-color: rgb(0, 127, 0);
+        box-shadow: 1px 3px 1px 2px;
+    }
+
+        .conect td {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+            color: green;
+        }
+
+    .conect-head {
+        text-align: center;
+        font-family: -webkit-pictograph;
+        color: rgb(255, 255, 255);
+        border: solid 1px;
+        background-color: rgb(110, 219, 19);
+        border-color: rgb(241, 241, 241);
+        border-radius: 6px;
+        border-bottom: solid 2px;
+    }
+
+    .conect select {
+        /*border-color: rgb(20, 176, 9);*/
+    }
+
+    .conect input {
+        /*border-color: rgb(10, 171, 0);*/
+    }
+
+    .pirsum-modaa-head {
+        text-align: center;
+        border: solid 1px;
+        background-color: rgb(110, 219, 19);
+        color: rgb(255, 255, 255);
+        border-bottom: solid 2px;
+        border-bottom-color: rgb(40, 144, 10);
+        font-family: -webkit-pictograph;
+        border-radius: 8px;
+        box-shadow: 1px 1px 1px 1px;
+        height: 65px;
+    }
+
+        .pirsum-modaa-head img {
+            float: left;
+            width: 100px;
+            height: 50px;
+        }
+
+    .pirsum-h1 {
+        width: 300px;
+        height: 50px;
+        float: right;
+    }
+
+    .pirsum-img {
+        width: 150px;
+        height: 50px;
+        float: right;
+    }
+
+    .post-img {
+        width: 400px;
+        height: 400px;
+        float: left;
+        border: solid 1px;
+        margin-top: 38px;
+        margin-left: 100px;
+        border-radius: 5px;
+        box-shadow: 1px 3px 1px 2px;
+    }
+
+        .post-img td {
+            margin-right: 19px;
+        }
+
+    .post-img-input {
+        margin-top: 10px;
+    }
+
+    .post {
+        margin-top: 849px;
+    }
+
+        .post button {
+            margin-right: 170px;
+            width: 172px;
+            height: 50px;
+            margin-top: 7px;
+            border-radius: 23px;
+            background-color: rgb(110, 219, 19);
+            color: rgb(255, 255, 255);
+            border-color: rgb(114, 227, 19);
+            font-size: 25px;
+            font-family: -webkit-pictograph;
+            border: solid 3px;
+            float: left;
+            margin-left: 82px;
+        }
+
+    .nevigetion {
+        height: 30px;
+        float: right;
+        border: solid 1px;
+        width: 540px;
+    }
+
+        .nevigetion a {
+            color: white;
+        }
+
+        .nevigetion li {
+            float: left;
+            /*margin-right: 41px;*/
+            border: solid 1px;
+            border-radius: 5px;
+            background-color: rgb(110, 219, 19);
+            /* color: white; */
+            border-color: rgb(226, 226, 226);
+            width: 100px;
+            text-align: center;
+            float: right;
+            margin-top: 4px;
+        }
+</style>
+<div class="nav-tabs">
+    <ul>
+        <li class="active"><a href="#update-show-details-form">הצג ועדכן פרטים</a></li>
+        <li><a href="#publish-post">פרסם מודעה</a></li>
+        <li><a href="#all-posts">לכל המודעות</a></li>
+    </ul>
+
+</div>
+@*    <div class="send-post-form">
+        <button type="submit" class="btn btn-default submit-post-form-btn form-part">שלח</button>
+    </div>*@
+
+<div class="main-container">
+
+    <div id="update-show-details-form">
+        <form role="form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">שם:</label>
+                <input type="text" class="form-control" id="Name" placeholder="הכנס שם">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">טלפון:</label>
+                <input type="text" class="form-control" id="Phone1" placeholder="הכנס טלפון">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">טלפון נוסף:</label>
+                <input type="text" class="form-control" id="Phone2" placeholder="הכנס טלפון נוסף">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">כתובת:</label>
+                <input type="text" class="form-control" id="FullAddress" placeholder="הכנס כתובת">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">כתובת מייל:</label>
+                <input type="email" class="form-control" id="Email" placeholder="הכנס כתובת מייל ">
+            </div>
+
+            <button type="submit" class="btn btn-default submit-selle-dtl-btn">שלח</button>
+        </form>
+
+
+    </div>
+
+
+    <div id="publish-post">
+        <button type="button" id="secondhand" class="btn btn-link">פרסם ביד שניה</button>
+        <button type="button" id="vehical" class="btn btn-link">פרסם ברכב</button>
+        @*Choose type of vehical: *@
+        <div class="select-vehical-type-btn">
+            <button type="button" id="cars" class="btn btn-link">רכב פרטי</button>
+            <button type="button" id="motorcycle" class="btn btn-link">אופנוע</button>
+            <button type="button" id="trucks" class="btn btn-link">משאית</button>
+            <button type="button" id="scooter" class="btn btn-link">קטנוע</button>
+            <button type="button" id="jeep" class="btn btn-link">ג'יפ</button>
+        </div>
+        <div class="postbase-form-part">
+            <form role="form">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">כותרת:</label>
+                    <input type="text" class="form-control second-hand" id="Title" placeholder="הכנס שם">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">תיאור:</label>
+                    <input type="text" class="form-control second-hand" id="Desc" placeholder="הכנס כתובת">
+                </div>
+
+                <select id="Regions"> </select>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">טלפון:</label>
+                    <input type="text" class="form-control second-hand" id="Phone1" placeholder="הכנס טלפון">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">טלפון נוסף:</label>
+                    <input type="text" class="form-control second-hand" id="Phone2" placeholder="הכנס טלפון נוסף">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">מחיר:</label>
+                    <input type="text" class="form-control second-hand" id="Price" placeholder="הכנס כתובת">
+                </div>
+            </form>
+            @*<button type="button" data-pid="" data-type="" class="btn btn-link default add-pics-btn">הוסף תמונות</button>*@
+            enter somthing: <input type="text" name="someValue" />
+            <br />
+
+            קובץ 1<input name="file1" type="file" /><br />
+            קובץ 2<input name="file2" type="file" /><br />
+            קובץ 3<input name="file3" type="file" /><br />
+            קובץ 4<input name="file4" type="file" /><br />
+
+            <button class="send">שלח</button>
+        </div>
+        <div class="secondhand-form-part">
+            <input name="type" type="hidden" value="SecondHand" />
+            <select id="StateId"> </select>
+            <select id="TypeId" name="cat"> </select>
+            <select id="SubTypeId"> </select>
+        </div>
+
+        <div class="cars-form-part">
+            <input name="type" type="hidden" value="car" />
+            <select id="ManufacturerId" name="man"> </select>
+            <select id="ModelId"> </select>
+            <select id="GearTypeId"> </select>
+            <div class="form-group">
+                <label for="exampleInputEmail1">צבע:</label>
+                <input type="text" class="form-control second-hand" id="Color" placeholder="הכנס כתובת">
+            </div>
+
+        </div>
+        <div class="motorcycle-form-part">
+            <select id="ManufacturerId"> </select>
+            <select id="ModelId"></select>
+            <div class="form-group">
+                <label for="exampleInputEmail1">צבע:</label>
+                <input type="text" class="form-control second-hand" id="Color" placeholder="הכנס כתובת">
+            </div>
+        </div>
+        <div class="trucks-form-part">
+            <select id="ManufacturerId"> </select>
+            <select id="ModelId"> </select>
+            <div class="form-group">
+                <label for="exampleInputEmail1">צבע:</label>
+                <input type="text" class="form-control second-hand" id="Color" placeholder="הכנס כתובת">
+            </div>
+        </div>
+        <div class="scooter-form-part">
+            <select id="ManufacturerId"> </select>
+            <select id="ModelId"> </select>
+            <div class="form-group">
+                <label for="exampleInputEmail1">צבע:</label>
+                <input type="text" class="form-control second-hand" id="Color" placeholder="הכנס כתובת">
+            </div>
+        </div>
+        <div class="jeep-form-part">
+            <input name="type" type="hidden" value="jeep" />
+            <select id="ManufacturerId"> </select>
+            <select id="ModelId"> </select>
+            <select id="GearTypeId"> </select>
+            <div class="form-group">
+                <label for="exampleInputEmail1">צבע:</label>
+                <input type="text" class="form-control second-hand" id="Color" placeholder="הכנס כתובת">
+            </div>
+        </div>
+
+        <div class="send-post-form">
+            <button type="submit" class="btn btn-default submit-post-form-btn form-part">שלח</button>
+        </div>
+        @*<button type="button" class="btn btn-primary btn-lg add-pics-btn" data-pid="" data-type="">הוסף תמונות</button>*@
+
+
+
+
+    </div>
+
+
+    <div id="all-posts">
+        @*<ul class="nav nav-tabs all-posts-tbl">
+                <li class="active"><a href="#cars-posts">מודעות רכב</a></li>
+                <li><a href="#secondhand-posts">מודעות יד שניה</a></li>
+
+            </ul>*@
+        <button type="button" id="vehical-posts-btn" class="btn btn-link">מודעות רכב</button>
+        <button type="button" id="secondhand-posts-btn" class="btn btn-link">מודעות יד שניה</button>
+        <div class="vehical-posts-select-type-btn">
+            <button type="button" id="cars-posts" class="btn btn-link ">רכב פרטי</button>
+            <button type="button" id="motorcycle-posts" class="btn btn-link ">אופנוע</button>
+            <button type="button" id="trucks-posts" class="btn btn-link ">משאית</button>
+            <button type="button" id="scooter-posts" class="btn btn-link ">קטנוע</button>
+            <button type="button" id="jeep-posts" class="btn btn-link ">ג'יפ</button>
+        </div>
+        <div id="all-cars" class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">מודעות רכב</div>
+            <div class="panel-body">
+                <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ID</th>
+                        <th>תאריך</th>
+                        <th>תמונה</th>
+                        <th>מחיר</th>
+                        <th>תיאור פריט</th>
+                        <th>קטגוריה</th>
+                        <th>תאריך העלאה</th>
+                        <th>תאריך שינוי</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>בדיקה</tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="all-secondhand" class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">מודעות יד שניה</div>
+            <div class="panel-body">
+                <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+
+            <!-- Table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>קטגוריה</th>
+                        <th>אזור בארץ</th>
+                        <th>מחיר</th>
+                        <th>תמונה</th>
+                        <th>הקפצה אחרונה</th>
+                        <th>תאריך </th>
+                        <th>סטטוס</th>
+                        <th>לפרטים</th>
+                        <th>תיאור פריט</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>fat</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        function getQsBy(key) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + key + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+        var yad2 = {
+            settingsObj: {
+                sendPost: {
+                    currentType: null
+                }
+            },
+            handlers: {
+                getPostsList: function (type) {
+
+
+                    $.ajax({
+                        url: "/PersonalArea/GetList",
+                        type: "POST",
+                        data: JSON.stringify(type),
+                        contentType: "application/json",
+                        dataType: 'json',
+                        success: function (r) {
+                            if (r.Success) {
+                                var html = "";
+                                var postsType = $("[id*=all]").split("-")[1];
+
+                                if (postsType == "cars") {
+                                    var carsTableTbody = $("#all-cars tbody");
+                                    for (var i in r.Posts) {
+                                        html += '<tr data-id="' + r.Posts[i].Id + '">'
+                                        + "<td='" + r.Posts[i].Id + "' >" + r.Posts[i].Name + "</td>"
+                                        + "</tr>";
+                                    }
+                                    carsTableTbody.html(html);
+                                    $("#all-cars").show();
+
+                                }
+                                else if (postsType == "secondhand") {
+                                    var carsTableTbody = $("#all-secondhand tbody");
+                                    for (var i in r.Posts) {
+                                        html += '<tr data-id="' + r.Posts[i].Id + '">'
+                                        + "<td='" + r.Posts[i].Id + "' >" + r.Posts[i].Name + "</td>"
+                                        + "</tr>";
+                                    }
+                                    carsTableTbody.html(html);
+                                    $("#all-cars").show();
+
+                                }
+
+                                alert("Success");
+
+                            }
+                        },
+                        error: function (r) {
+                            alert("error");
+                        }
+                    });
+
+                },
+                getSellerDtl: function () {
+                    var username = getCookie("un");
+                    $.ajax({
+                        url: "/PersonalArea/GetSeller",
+                        data: JSON.stringify(username),
+                        contentType: "application/json",
+                        dataType: "json",
+                        type: "POST",
+                        success: function (r) {
+                            if (r.Success) {
+
+                                $("input[id=Name]").val(r.Seller.Name);
+                                $("input[id=Phone1]").val(r.Seller.Phone1);
+                                $("input[id=Phone2]").val(r.Seller.Phone2);
+                                $("input[id=FullAddress]").val(r.Seller.FullAddress);
+                                $("input[id=Email]").val(r.Seller.Email);
+
+                                $(".submit-selle-dtl-btn").attr("data-id", r.Seller.Id)
+
+                                yad2.sections.seller.show.updateShowDetailsForm();
+                            }
+                            else alert(r.Message);
+
+                        },
+                        error: function (r) {
+                            alert("error in data");
+                        }
+                    });
+
+
+
+                },
+                updateSellerDtl: function () {
+                    var email;
+                    var html = "";
+                    var isValid = true;
+                    //validation:
+                    var name = $("input[id=Name]").val();
+                    var phone1 = $("input[id=Phone1]").val();
+                    var phone2 = $("input[id=Phone2]").val();
+                    var fullAdd = $("input[id=FullAddress]").val();
+                    var email = $("input[id=Email]").val();
+
+
+                    if (isValid) {
+                        var dataToSend = {
+
+                            Seller: {
+                                Id: $(".submit-selle-dtl-btn").attr("data-id"),
+                                Name: name,
+                                Phone1: phone1,
+                                Phone2: phone2,
+                                FullAddress: fullAdd,
+                                Email: email
+                            },
+                        }
+                    }
+                    if ($(".updateSellerBtn").attr("data-id"))
+                        dataToSend.updateRequest.Seller.Id = $(".updateSellerBtn").attr("data-id");
+
+                    $.ajax({
+                        url: '/PersonalArea/UpdateSeller',
+                        data: JSON.stringify(dataToSend),
+                        contentType: "application/json",
+                        dataType: "json",
+                        type: "POST",
+                        success: function (r) {
+                            if (r.Success) {
+                                alert("User updated succesfully");
+                            }
+                            else alert(r.Message);
+
+
+                            //$(".update-seller-form").html(html);
+                            alert("Seller Details:");
+                        },
+                        error: function (r) {
+                            alert("error in data");
+                        }
+                    });
+                },
+                getSettingsAjax: function (Type) {
+
+                    var type = Type.toLowerCase();
+                    $.ajax({
+                        url: "/" + Type + "/GetSettings",
+                        // data: JSON.stringify(),
+                        contentType: "application/json",
+                        type: "POST",
+                        dataType: 'json',
+                        success: function (r) {
+                            if (r) {
+                                $("[class*=form-part]").hide();
+                                $(".postbase-form-part").show();
+                                $("." + type + "-form-part").show();
+                                $(".submit-post-form-btn").show();
+
+                                if (r.Regions) {
+                                    var regionsSelectJq = $("select[name=reg]")
+                                    regionsSelectJq.append("<option >כל האיזורים</option>");
+
+                                    for (var i = 0; i < r.Regions.length; i++) {
+                                        if (!r.Regions[i].PId) {
+                                            regionsSelectJq.append("<option style='color: red;' value='" + r.Regions[i].Id + "' >" + r.Regions[i].Name + "</option>");
+                                            for (var j = 0; j < r.Regions.length; j++) {
+                                                if (r.Regions[j].PId == r.Regions[i].Id) {
+                                                    regionsSelectJq.append("<option value='" + r.Regions[j].Id + "' >" + r.Regions[j].Name + "</option>");
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+
+
+                                if (r.Categories) {
+
+                                    //secondhand settingsObject:
+                                    var categoriesSelectJq = $("select[name=cat]")
+                                    categoriesSelectJq.append("<option >כל הקטגוריות</option>");
+                                    for (var i = 0; i < r.Categories.length; i++) {
+                                        if (!r.Categories[i].PId) {
+                                            categoriesSelectJq.append("<option style='color: red;' value='" + r.Categories[i].Id + "' >" + r.Categories[i].Name + "</option>");
+                                            for (var j = 0; j < r.Categories.length; j++) {
+                                                if (r.Categories[j].PId == r.Categories[i].Id) {
+                                                    categoriesSelectJq.append("<option value='" + r.Categories[j].Id + "' >" + r.Categories[j].Name + "</option>");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (r.SubCategories) {
+                                    var subCategoriesSelectJq = $("select[name=Subcat]")
+                                    subCategoriesSelectJq.append("<option >כל תתי הקטגוריות</option>");
+                                    for (var i = 0; i < r.SubCategories.length; i++) {
+                                        if (r.SubCategories[i].PId != null) {
+                                            subCategoriesSelectJq.append("<option style='color: red;' value='" + r.SubCategories[i].Id + "' >" + r.SubCategories[i].Name + "</option>");
+                                            for (var j = 0; j < r.SubCategories.length; j++) {
+                                                if (r.SubCategories[j].PId == r.SubCategories[i].Id) {
+                                                    subCategoriesSelectJq.append("<option value='" + r.SubCategories[j].Id + "' >" + r.SubCategories[j].Name + "</option>");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (r.States) {
+                                    var statesSelectJq = $("select[name=State]")
+                                    statesSelectJq.append("<option >מצב המוצר </option>");
+                                    for (var i = 0; i < r.States.length; i++) {
+                                        if (!r.States[i].PId) {
+                                            statesSelectJq.append("<option style='color: red;' value='" + r.States[i].Id + "' >" + r.States[i].Name + "</option>");
+                                            for (var j = 0; j < r.States.length; j++) {
+                                                if (r.States[j].PId == r.States[i].Id) {
+                                                    statesSelectJq.append("<option value='" + r.States[j].Id + "' >" + r.States[j].Name + "</option>");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                //cars settingsObject:
+
+
+
+
+                                if (r.Manufacturers) {
+                                    var manufacturersSelectJq = $("select[name=man]")
+                                    manufacturersSelectJq.append("<option >יצרן </option>");
+                                    for (var i = 0; i < r.Manufacturers.length; i++) {
+                                        if (!r.Manufacturers[i].PId) {
+                                            manufacturersSelectJq.append("<option style='color: red;' value='" + r.Manufacturers[i].Id + "' >" + r.Manufacturers[i].Name + "</option>");
+                                            for (var j = 0; j < r.Manufacturers.length; j++) {
+                                                if (r.Manufacturers[j].PId == r.Manufacturers[i].Id) {
+                                                    manufacturersSelectJq.append("<option value='" + r.Manufacturers[j].Id + "' >" + r.Manufacturers[j].Name + "</option>");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                $("#ManufacturerId").change(function (e) {
+
+                                    var manPId = $(e.target).val();
+                                    for (var i = 0; i < r.Manufacturers.length; i++) {
+                                        if (r.Manufacturers[i].Name == manPId) manPId = r.Manufacturers[i].Id;
+                                    }
+                                    var html = "<option  value=''>בחר מודל</option>";
+                                    for (var z = 0; z < r.Models.length; z++) {
+                                        if (r.Models[z].PId == manPId)
+                                            html += "<option value='" + r.Models[z].Id + "'>" + r.Models[z].Name + "</option>";
+
+                                    }
+                                    var modQUR = $("select[name=mdl]");
+                                    modQUR.html(html)
+
+                                    var modQU = getQsBy("mdl");
+                                    if (modQU) $("option[value= " + modQU + "]", modQUR).attr("selected", "selected");
+
+                                });
+                                if (r.Models) {
+                                    var modelsSelectJq = $("select[name=Models]")
+                                    modelsSelectJq.append("<option >מודל </option>");
+                                    for (var i = 0; i < r.Models.length; i++) {
+                                        if (r.Models[i].PId != null) {
+                                            modelsSelectJq.append("<option style='color: red;' value='" + r.Models[i].Id + "' >" + r.Models[i].Name + "</option>");
+                                            for (var j = 0; j < r.Models.length; j++) {
+                                                if (r.Models[j].PId == r.Models[i].Id) {
+                                                    modelsSelectJq.append("<option value='" + r.Models[j].Id + "' >" + r.Models[j].Name + "</option>");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+
+
+                                if (r.CarGearType) {
+                                    var carGearTypeSelectJq = $("select[name=gt]")
+                                    carGearTypeSelectJq.append("<option >תיבת הילוכים </option>");
+                                    for (var i = 0; i < r.CarGearType.length; i++) {
+                                        if (!r.CarGearType[i].PId) {
+                                            carGearTypeSelectJq.append("<option style='color: red;' value='" + r.CarGearType[i].Id + "' >" + r.CarGearType[i].Name + "</option>");
+                                            for (var j = 0; j < r.CarGearType.length; j++) {
+                                                if (r.CarGearType[j].PId == r.CarGearType[i].Id) {
+                                                    carGearTypeSelectJq.append("<option value='" + r.CarGearType[j].Id + "' >" + r.CarGearType[j].Name + "</option>");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                var HamdHtml = "<option value='' >יד</option>";
+
+                                for (var i = 0 ; i < 10 ; i++) {
+                                    HamdHtml += "<option value='" + i + "'>" + i + "</option>";
+                                }
+                                oc = $("select[name=oc]");
+                                oc.html(HamdHtml);
+
+                                var yearHtml = "<option value='' >בחר שנה</option>";
+                                var today = new Date();
+                                for (var i = today.getFullYear() ; i >= 1970 ; i--) {
+                                    yearHtml += "<option value='" + i + "'>" + i + "</option>";
+                                }
+
+
+                                ymin = $("select[name=ymin]");
+                                ymin.html(yearHtml);
+
+                                if (r.Colors) {
+                                    var ColorQ = $("select[name=clr]");
+                                    ColorQ.append("<option value=\"\">בחר </option>");
+                                    for (var m in r.Colors) {
+                                        ColorQ.append("<option value='" + r.Colors[m].Id + "'>" + r.Colors[m].Name + "</option>");
+                                    }
+                                }
+                            }
+                            else {
+                                alert("error in data");
+                            }
+                        },
+                        error: function (r) {
+                            alert("error");
+                        }
+
+                    });
+
+                },
+                getSellerAllPosts: function (type) {
+                    $.ajax({
+                        url: "/PersonalArea/GetList",
+                        data: JSON.stringify(username),
+                        contentType: "application/json",
+                        dataType: "json",
+                        type: "POST",
+                        success: function (r) {
+                            if (r.Success) {
+
+                            }
+                            else alert(r.Message);
+
+                        },
+                        error: function (r) {
+                            alert("error in data");
+                        }
+                    });
+
+                }
+
+            },
+            sections: {
+                seller: {
+                    show: {
+
+                        updateShowDetailsForm: function () {
+                            $("#update-show-details").show();
+                            $(".change-pass-btn").show();
+                            $("#update-show-details-btn").show();
+                            $("#update-show-details-form").show();
+                            $(".change-pass-form").hide();
+                            $("#publish-post").hide();
+                            $("#all-posts").hide();
+                        },
+                        changePassForm: function () {
+                            $("#update-show-details").show();
+                            $(".change-pass-btn").show();
+                            $(".update-show-details-btn").show();
+                            $(".update-show-details-form").hide();
+                            $(".change-pass-form").show();
+                            $("#publish-post").hide();
+                            $("#all-posts").hide();
+                        },
+                        publishPostForm: function () {
+                            $("#update-show-details").hide();
+                            $("#publish-post").show();
+                            $(".select-vehical-type-btn").hide();
+                            $("#all-posts").hide();
+                        },
+                        allPosts: function () {
+                            $("#update-show-details").hide();
+                            $("#publish-post").hide();
+                            //  $(".vehical-posts-select-type-btn").hide();
+                            $(".select-vehical-type-btn").hide();
+                            $("#all-posts").show();
+                            $("#all-cars").hide();
+                            $("#all-secondhand").hide();
+
+                        }
+                    },
+                    hide: function () {
+                        $("#update-show-details").hide();
+                        $("#publish-post").hide();
+                        $("#all-posts").hide();
+
+                    }
+                }
+            }
+        }
+        $(document).ready(function () {
+            yad2.sections.seller.hide();
+           
+            $("#update-show-details-form").hide();
+
+            //הוספת תמונות
+            $(".send").click(function (e) {
+
+                // if button is inside form :
+                e.preventDefault();
+
+
+                // this is needed because we send files
+                var fd = new FormData();
+
+
+                $("input[type=file]").each(function (i, v) {
+                    if (v.files.length > 0) fd.append("file" + (i + 1), v.files[0], v.files[0].name);
+                });
+
+                // fields
+
+                //var post = {};
+
+                // post.type = settingsObj.sendPost.currentType;
+                //   fd.append("type", settingsObj.sendPost.currentType);
+
+
+                //$(".add-posts-section select:visible , .add-posts-section input:visible").each(function (i, v) {
+                //    post[$(v).attr("name")] = $(v).val();
+                //});
+
+
+                $("input[type=text]").each(function (i, v) {
+                    fd.append($(v).attr("name"), $(v).val());
+                });
+
+
+                $.ajax({
+                    url: '/Seller/NewPost',
+                    type: 'POST',
+                    data: fd,
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    success: function (r) {
+                        alert("success");
+                    },
+                    error: function (r) {
+                        alert("falied");
+                    }
+                });
+            });
+
+            // navigation:
+            //$(".nav-tabs").click(function (e) {
+            $(".nav-tabs").click(function (e) {
+                if (e.target.href.split("#")[1] == "update-show-details-form") {
+                    yad2.handlers.getSellerDtl();
+                }
+                else if (e.target.href.split("#")[1] == "publish-post") {
+                    // $("#publish-post").show();
+                    yad2.sections.seller.show.publishPostForm();
+                    $("[class*=form-part]").hide();
+                }
+                else yad2.sections.seller.show.allPosts();
+
+            })
+
+            $(".change-pass-btn").click(function (e) {
+                $(".change-pass-form").show();
+                $(".update-show-details-form").hide();
+            })
+
+            //update seller section:
+            $(".update-show-details-btn").click(function (e) {
+                $(".change-pass-form").hide();
+                $(".update-show-details-form").show();
+                yad2.handlers.getSellerDtl();
+            })
+            //click on submit in update-show seller form:
+            $(".submit-selle-dtl-btn").click(function (e) {
+                e.preventDefault();
+                yad2.handlers.updateSellerDtl();
+
+            })
+
+            //publish section:
+            $("#publish-post button").click(function (e) {
+                e.preventDefault();
+                var type = $(this).attr("id");
+                var Type;
+
+                if (type == "secondhand") {
+                    Type = "SecondHand";
+                    yad2.settingsObj.sendPost.currentType = type;
+                    yad2.handlers.getSettingsAjax(Type);
+                }
+                else if (type == "vehical") {
+                    $(".select-vehical-type-btn").show();
+                    Type = "Cars";
+                    yad2.settingsObj.sendPost.currentType = type;
+                    yad2.handlers.getSettingsAjax(Type);
+                }
+                else if (type == "cars") {
+                    Type = "Cars";
+                    yad2.settingsObj.sendPost.currentType = type;
+                    yad2.handlers.getSettingsAjax(Type);
+                }
+                else if (type == "motorcycle") {
+                    Type = "Motorcycle";
+                    yad2.settingsObj.sendPost.currentType = type;
+                    yad2.handlers.getSettingsAjax(Type);
+                }
+                else if (type == "trucks") {
+                    Type = "Trucks";
+                    yad2.settingsObj.sendPost.currentType = type;
+                    yad2.handlers.getSettingsAjax(Type);
+                }
+                else if (type == "scooter") {
+                    Type = "Scooter";
+                    yad2.settingsObj.sendPost.currentType = type;
+                    yad2.handlers.getSettingsAjax(Type);
+                }
+                else if (type == "jeep") {
+                    Type = "Jeep";
+                    yad2.settingsObj.sendPost.currentType = type;
+                    yad2.handlers.getSettingsAjax(Type);
+                }
+
+            });
+            $(".submit-post-form-btn").click(function (e) {
+                e.preventDefault();
+                var post = {};
+
+                post.type = yad2.settingsObj.sendPost.currentType;
+
+                $("#publish-post select:visible , #publish-post input:visible").each(function (i, v) {
+                    post[$(v).attr("id")] = $(v).val();
+                });
+
+                $.ajax({
+                    url: "/PersonalArea/PublishPost",
+                    type: "POST",
+                    data: JSON.stringify(post),
+                    contentType: "application/json",
+                    dataType: 'json',
+                    success: function (r) {
+                        if (r.Success) {
+                            alert("added");
+                            //$(".add-pics-btn").attr("data-pid", r.Id).attr("data-type", settingsObj.sendPost.currentType).show();
+                            // hide all the inputs and show addpics btn
+                        }
+                    },
+                    error: function (r) {
+                        alert("error");
+                    }
+                });
+
+            });
+
+
+            $(".add-pics-btn").click(function (e) {
+                var type = $(this).attr("data-type");
+                var pid = $(this).attr("data-pid");
+                if (type && pid)
+                    window.open("/Content/Upload.html?pid=" + pid + "&t=" + type, "", "toolbar=no, scrollbars=yes, resizable=no, top=100, left=100, width=400, height=500");
+            });
+
+            //all seker posts section:
+            $("#all-posts button").click(function (e) {
+                debugger;
+                e.preventDefault();
+                var type = $(this).attr('id').split("-")[0]; //e.target.id.split("-")[0];
+                var Type = "";
+
+                if (type != null) {
+
+                    if (type == "secondhand") {
+                        Type = "SecondHand";
+                        //yad2.handlers.getPostsList(type)
+                    }
+                    else if (type == "vehical") {
+                        $(".vehical-posts-select-type-btn").show();
+                        //yad2.settingsObj.sendPost.currentType = type;
+                    }
+                    else if (type == "cars") {
+                        Type = "Cars";
+                        //yad2.handlers.getPostsList(type)
+                    }
+                    else if (type == "motorcycle") {
+                        Type = "Motorcycle";
+                        //yad2.handlers.getPostsList(type)
+                    }
+                    else if (type == "trucks") {
+                        Type = "Trucks";
+                        //yad2.handlers.getPostsList(type)
+                    }
+                    else if (type == "scooter") {
+                        Type = "Scooter";
+                        //yad2.handlers.getPostsList(type);
+                    }
+                    else if (type == "jeep") {
+                        Type = "Jeep";
+                        //yad2.handlers.getPostsList(type)
+                    }
+
+                }
+
+                //var dataToSend = {}
+                //dataToSend.type = type;
+
+               
+                $.ajax({
+                    url: "/" + Type + "/GetSellerPostsList",
+                    //data: JSON.stringify(dataToSend),
+                    contentType: "application/json",
+                    dataType: "json",
+                    type: "POST",
+                    success: function (r) {
+                        if (r.success)
+                            var html = "";
+                        var allSecondHandTbody = $('all-' + type + '< tbody>"');
+                        var partOfPostDesc = r.Posts.Desc;
+                        // partOfPostDesc.length
+
+                        if (type.toLowerCase() == "cars" && type.toLowerCase() == "jeeps") {
+                            for (posts in r.Posts) {
+                                html += '<tr data-id="' + r.Posts.id + '">'
+                                + '<td>' + r.Posts.Regions.Name + '</td>'
+                                + '<td>תיאור</td>'
+                                + '<td>' + r.Posts.CarGearType + '</td>'
+                                + '<td>' + r.Posts.Price + '</td>'
+                                + '<td> תמונה</td>'
+                                + '<td>' + r.Posts.LastPopedUp + '</td>'
+                                + '<td>' + r.Posts.Created + '</td>'
+                                + '<td>פעיל\לא פעיל</td>'
+                                + '<td>לפרטים</td>'
+                                + '</tr>'
+                            }
+
+                        }
+                        $('all-' + type + '"').show();
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        if (xhr.status == 404) {
+                            alert(thrownError);
+                        }
+                    }
+                });
+
+
+
+
+            })
+
+
+        });
+    </script>
+}

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yad2.Model", "Yad2.Model\Yad2.Model.csproj", "{6F28A3DA-0E01-44BE-BF08-B46CA960D047}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yad2.Services", "Yad2.Services\Yad2.Services.csproj", "{B8413469-0D0B-4EC8-B155-54BE1787809F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{D3A9D158-D68B-4BCD-A3EF-BEE69C8E67D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yad2.EFRepositories", "Yad2.EFRepositories\Yad2.EFRepositories.csproj", "{5DA3CE12-496C-40CF-AADC-D4B59D14B691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yad2.Web.Mvc.UI", "Yad2.Web.Mvc.UI\Yad2.Web.Mvc.UI.csproj", "{FB186F4C-7277-447A-AAA3-F694590C191F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yad2.Controllers", "Yad2.Controllers\Yad2.Controllers.csproj", "{1A9E5DFC-276A-4B42-A4D7-4E129A63F802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Web", "Infrastructur\Infrastructure.Web.csproj", "{ACEBC78E-0003-4C0E-95B5-ECE439B71E7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F28A3DA-0E01-44BE-BF08-B46CA960D047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F28A3DA-0E01-44BE-BF08-B46CA960D047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F28A3DA-0E01-44BE-BF08-B46CA960D047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F28A3DA-0E01-44BE-BF08-B46CA960D047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8413469-0D0B-4EC8-B155-54BE1787809F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8413469-0D0B-4EC8-B155-54BE1787809F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8413469-0D0B-4EC8-B155-54BE1787809F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8413469-0D0B-4EC8-B155-54BE1787809F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3A9D158-D68B-4BCD-A3EF-BEE69C8E67D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A9D158-D68B-4BCD-A3EF-BEE69C8E67D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A9D158-D68B-4BCD-A3EF-BEE69C8E67D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A9D158-D68B-4BCD-A3EF-BEE69C8E67D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA3CE12-496C-40CF-AADC-D4B59D14B691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA3CE12-496C-40CF-AADC-D4B59D14B691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA3CE12-496C-40CF-AADC-D4B59D14B691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA3CE12-496C-40CF-AADC-D4B59D14B691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB186F4C-7277-447A-AAA3-F694590C191F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB186F4C-7277-447A-AAA3-F694590C191F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB186F4C-7277-447A-AAA3-F694590C191F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB186F4C-7277-447A-AAA3-F694590C191F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A9E5DFC-276A-4B42-A4D7-4E129A63F802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A9E5DFC-276A-4B42-A4D7-4E129A63F802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A9E5DFC-276A-4B42-A4D7-4E129A63F802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A9E5DFC-276A-4B42-A4D7-4E129A63F802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACEBC78E-0003-4C0E-95B5-ECE439B71E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACEBC78E-0003-4C0E-95B5-ECE439B71E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACEBC78E-0003-4C0E-95B5-ECE439B71E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACEBC78E-0003-4C0E-95B5-ECE439B71E7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

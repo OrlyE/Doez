@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--@model Yad2.Services.Messages.GetListResponse<yad2.model.entities.car>
+
+        @{
+        ViewBag.Title = "Index";
+        }
+
+        <link href="~/Style/StyleSheet1.css" rel="stylesheet" />
+        <link href="~/Style/MainStyle.css" rel="stylesheet" />
+
+
+
+        @*
+        pmin - min price
+        pmax - max price
+        *@
+
+        @using (Html.BeginForm("Index", "Cars", FormMethod.Get))
+        {-->
+
+
+
+
+        <div class="menuTop">
+            <div><span> הבית</span></div>
+            <div><span> הבית</span></div>
+            <div><span> הבית</span></div>
+            <div><span> הבית</span></div>
+            <div><span> הבית</span></div>
+            <div><span> הבית</span></div>
+            <div><span> הבית</span></div>
+
+        </div>
+
+
+
+        @*<div class="filter-inner-wrapper">
+
+            <div class="filter-upper-row">
+                <div class="filter-BA"><a href="kavascript:void(0);">חיפוש מתקדם</a></div>
+                <input type="hidden" name="iadv" value="false">
+
+                <div class="simple-filter-opt"><a href="kavascript:void(0);">חיפוש רגיל</a></div>
+            </div>
+            @*<table align="center" class="filter-outer-tbl">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="submit" value="שלח" />
+                        </td>
+                        <td>
+                            <table class="cars-filter">
+                                <tbody>
+                                    <tr>
+                                        <td class="simple-filter"><div class="filter-field-title">עד מחיר</div><div class="filter-field-input"><input type="text" name="pmax" /></div></td>
+                                        <td class="simple-filter"><div class="filter-field-title">ממחיר</div><div class="filter-field-input"><input type="text" name="pmin" /></div></td>
+                                        <td class="simple-filter"><div class="filter-field-title">תיבת הילוכים</div><div class="filter-field-input"><select name="gt"></select></div></td>
+                                        <td class="simple-filter"><div class="filter-field-title">עד שנה</div><div class="filter-field-input"><select name="ymax"></select></div></td>
+                                        <td class="simple-filter"><div class="filter-field-title">משנה</div><div class="filter-field-input"><select name="ymin"></select></div></td>
+                                        <td class="simple-filter"><div class="filter-field-title">דגם</div><div class="filter-field-input"><select name="mdl" id="mdl"></select></div></td>
+                                        <td class="simple-filter"><div class="filter-field-title">יצרן</div><div class="filter-field-input"><select name="man" id="man"></select></div></td>
+                                        <td class="simple-filter">
+                                            <div class="filter-field-title">איזור</div><div class="filter-field-input">
+                                                <select name="reg"></select>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <table class="table-bordered">
+                                <tbody>
+                                    <tr>
+
+                                        <td class="AdvSti-filter"><div class="filter-field-title">צבע</div><div class="filter-field-input"><select name="clr" id="clr"></select></div></td>
+                                        <td class="AdvSti-filter"><div class="filter-field-title">יד</div><div class="filter-field-input"><select name="oc" id="oc"></select></div></td>
+                                        <td class="AdvSti-filter"><div class="filter-field-title">בעלות</div><div class="filter-field-input"><select name="ot" id="ot"></select></div></td>
+                                        <td class="AdvSti-filter"><div class="filter-field-title">נפח מנוע</div><div class="filter-field-input"><select name="ec" id="ec"></select></div></td>
+                                        <td class="AdvSti-filter"><div class="filter-field-title">מק"מ</div><div class="filter-field-input"><input name="kmin" type="text" /></div></td>
+                                        <td class="AdvSti-filter"><div class="filter-field-title">עד ק"מ </div><div class="filter-field-input"><input name="kmax" type="text" /></div></td>
+                                        <td><div class="filter-field-title">טקסט חופשי:</div><div class="filter-field-input"><input type="text" name="txt" id="text" /></div></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="right">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><span>הצג מודעות עם מחיר בלבד</span> <input type="checkbox" name="chk1" /> </td>
+                                        <td><span>הצג מודעות עם תמונות בלבד</span> <input type="checkbox" name="chk2" /> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>*@
+
+
+        <div class="DivSearchTable">
+
+
+            <div class="SearchTable SearchText">
+                <br />
+                <span> איז</span>
+                <select name="" id="" class="DropDown-CarType"><option selected="selected" value="-1">סוג: </option></select>
+                <span> איז</span>
+                <select name="" id="" class="DropDown-CarType"><option selected="selected" value="-1">סוג: </option></select>
+                <span> איז</span>
+                <select name="" id="" class="DropDown-CarType"><option selected="selected" value="-1">סוג: </option></select>
+                <span> איז</span>
+                <select name="" id="" class="DropDown-CarType"><option selected="selected" value="-1">סוג: </option></select>
+                <span> איז</span>
+                <select name="" id="" class="DropDown-CarType"><option selected="selected" value="-1">סוג: </option></select>
+                <span> איז</span>
+                <select name="" id="" class="DropDown-CarType"><option selected="selected" value="-1">סוג: </option></select>
+                <div>
+                    <input type="image" title="חפש" text="Find" src="../Images/search-button.gif" style="height: 35px; width: 105px; border-width: 0px; margin: 8px 122px 0 20px;">
+
+
+                </div>
+            </div>
+            <div></div>
+        </div>
+
+
+        <div class="leftSideWrapper newCarCats">
+            <div class="leftSide carList">
+                <ul>
+                    <li>
+                        <a href="/קטגורית_רכב/מכוניות_קטנות/" class="carIcon1"></a>
+                        <p>קטנות</p>
+                    </li>
+                    <li>
+                        <a href="/קטגורית_רכב/רכב_משפחתי/" class="carIcon2"></a>
+                        <p>משפחתיות</p>
+                    </li>
+                    <li>
+                        <a href="/קטגורית_רכב/רכב_מנהלים/" class="carIcon3"></a>
+                        <p>מנהלים</p>
+                    </li>
+                    <li>
+                        <a href="/קטגורית_רכב/מכוניות_ספורטיביות/" class="carIcon4"></a>
+                        <p>ספורט</p>
+                    </li>
+                    <li>
+                        <a href="/קטגורית_רכב/רכב_שטח/" class="carIcon5"></a>
+                        <p>שטח</p>
+                    </li>
+                    <li>
+                        <a href="/קטגורית_רכב/מיניוואנים/" class="carIcon6"></a>
+                        <p>מיניוואן</p>
+                    </li>
+                    <li>
+                        <a href="/קטגורית_רכב/טנדרים/" class="carIcon7"></a>
+                        <p>טנדרים</p>
+                    </li>
+                    <li>
+                        <a href="/קטגורית_רכב/רכב_מסחרי/" class="carIcon8"></a>
+                        <p>מסחריות</p>
+                    </li>
+                    <li>
+                        <a href="/קטגורית_רכב/מכוניות_יוקרה_-_פאר/" class="carIcon9"></a>
+                        <p>יוקרה</p>
+                    </li>
+                </ul>
+            </div><!--.leftSide-->
+        </div>
+
+        }
+
+        <table class="items-tbl table table-hover info" align="center">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>תאריך</th>
+                    <th>תמונה</th>
+                    <th>איזור בארץ</th>
+                    <th>ת.הילוכים</th>
+                    <th>יד</th>
+                    <th>מחיר</th>
+                    <th>שנה</th>
+                    <th>נפח</th>
+                    <th>דגם</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tr>
+                <td><button id="tests">בדיקה</button> </td>
+            </tr>
+            <tbody>
+                @foreach (string[] fields in Model.Items)
+                {
+
+                <tr data-id="@fields[0]">
+                    <td class="chak">
+                        לפרטים
+                    </td>
+                    <td class="chak">
+                        @fields[9]
+                    </td>
+                    <td class="chak">
+                        @if (fields[8] /* pics */ == "true")
+                        {
+                        <img src="" alt="" />
+                        }
+                    </td>
+                    <td class="chak">
+                        @fields[7]
+                    </td>
+                    <td class="chak">
+                        @fields[6]
+                    </td>
+                    <td class="chak">
+                        @fields[5]
+                    </td>
+                    <td class="chak">
+                        @fields[4]
+                    </td>
+                    <td class="chak">
+                        @fields[3]
+                    </td>
+                    <td class="chak">
+                        @fields[2]
+                    </td>
+                    <td class="chak">
+                        @fields[1]
+                    </td>
+                    <td class="fav">*</td>
+
+                </tr>
+                <tr class="post-info" style="display:none;">
+                    <td colspan="2"></td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+
+        <div class="paging">
+            @Html.PageLinks(Model.CurrentPage, Model.TotalPages, x => Url.Action("Index", "Cars", new
+            {
+            p = x,
+            ipp = Model.ItemsPerPage,
+            iadv = (Model.FilterObject as Yad2.Services.Filters.CarsFilter).IsAdvancedFilter,
+            gt = (Model.FilterObject as Yad2.Services.Filters.CarsFilter).GearType,
+            pmin = (Model.FilterObject as Yad2.Services.Filters.CarsFilter).PriceMin,
+            pmax = (Model.FilterObject as Yad2.Services.Filters.CarsFilter).PriceMax,
+            man = (Model.FilterObject as Yad2.Services.Filters.CarsFilter).Manufacturer,
+            mdl = (Model.FilterObject as Yad2.Services.Filters.CarsFilter).Model,
+            reg = (Model.FilterObject as Yad2.Services.Filters.CarsFilter).RegionId,
+            }))
+        </div>
+
+
+
+        @section scripts {
+
+        <script src="/Scripts/car.js"></script>
+
+        <script src="/Scripts/yad2.cars.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        @*@Scripts.Render("~/bundles/yad2.cars")*@
+
+        }
+</body>
+</html>

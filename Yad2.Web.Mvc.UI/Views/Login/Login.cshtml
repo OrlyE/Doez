@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<label> שם משתמש:</label>   <input type="text" name="name" value="Shuki" />
+<label>סיסמא:</label>    <input type="text" name="password" value="1234" />
+
+<div class="login-btn" style="height:50px; width:200px;">
+    <button style="background-color: grey; height: 20px; width: 170px;">כנס</button>
+</div>
+@Html.ActionLink("Wellcom", "Index", "PersonalArea",
+new { returnUrl = Request.Url.PathAndQuery }, null)
+@section scripts {
+
+
+    <script>
+    $(document).ready(function () {
+        $(".login-btn").click(function (e) {
+            e.preventDefault();
+            
+            var html = "";
+            var isValid = true;
+            //validation:
+            var name = $("input[name=name]").val();
+            if ($("input[name=UserName]").val() == "")
+            {
+                isValid = false;
+                alert("Incorrect user name");
+            }
+            var password = $("input[name=password]").val();
+            //if ($("input[name=password]").val() == "") {
+            //    isValid = false;
+            //    alert("Incorrect password");
+            //}
+            
+
+            if (isValid) {
+                var dataToSend = {
+                    username:name,
+                    password:password
+                    
+                }
+            }
+
+            $.ajax({
+                url: '/Login/Login',
+                data: JSON.stringify(dataToSend),
+                contentType: "application/json",
+                dataType: "json",
+                type: "POST",
+                success: function (r) {
+                    if (r.Success) {
+                        alert("User loged-in");
+                        window.location.href = '@Url.Action("Index", "PersonalArea")';
+                        
+                    }
+                    else alert(r.Message);
+                },
+                error: function (r) {
+                    alert("error in data");
+                }
+            });
+        });
+    });
+    </script>
+
+}

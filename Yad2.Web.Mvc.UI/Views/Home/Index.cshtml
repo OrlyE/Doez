@@ -1,0 +1,421 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+<meta http-equiv="content-type" content="text/html    ; charset=utf-8" /> <style > .body {
+        background-color: rgba(238, 239, 240, 0.56);
+        height: 800px;
+    }
+
+    .navigation {
+        list-style: none;
+        float: right;
+    }
+
+
+        .navigation ul li {
+            padding-left: 15px;
+            float: left;
+            list-style: none;
+        }
+
+    #catecorey-box {
+        width: 631px;
+        height: 37px;
+        border: solid 3px;
+        background-color: rgb(242, 239, 245);
+        float: left;
+        border-radius: 3px;
+        margin-top: 85px;
+        border-color: rgb(41, 116, 197);
+        margin-left: 150px;
+    }
+
+    .cat {
+        width: 70px;
+        height: 35px;
+        border-left: solid 1px;
+        float: right;
+        background-color: white;
+    }
+
+    .serch-bar {
+        width: 120px;
+        border-left: solid 1px;
+        float: right;
+    }
+
+        .serch-bar select {
+            height: 37px;
+            width: 120px;
+        }
+
+    .input {
+        height: 35px;
+    }
+
+        .input input {
+            width: 462px;
+            height: 32px;
+            float: right;
+        }
+
+    .cat a {
+        position: absolute;
+        font-size: 20px;
+        margin-left: 5px;
+        font-family: cursive;
+    }
+
+    .categories {
+        height: 150px;
+        width: 1000px;
+        float: right;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        font-family: serif;
+        color: rgb(41, 116, 197);
+    }
+
+    h2 {
+        margin-left: 20px;
+        font-family: -webkit-pictograph;
+        color: rgb(41, 116, 197);
+    }
+
+    .headeres {
+        width: 335px;
+        height: 150px;
+        float: left;
+        margin-left: 14px;
+    }
+
+    .serch-btn {
+        float: left;
+    }
+
+    .harshama {
+        width: 320px;
+        height: 30px;
+        float: right;
+        margin-right: 10px;
+    }
+
+        .harshama p {
+            font-size: 20px;
+            font-family: -webkit-pictograph;
+            text-align: center;
+        }
+
+    #page {
+        width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        float: right;
+        margin-top: 40px;
+    }
+
+    img.left {
+    }
+
+    .product {
+        width: 235px;
+        height: 200px;
+        background-color: rgb(253, 253, 253);
+        border-radius: 3px;
+        border: solid 2px;
+        border-color: rgb(41, 116, 197);
+        border-bottom: aliceblue;
+        display:table-row;
+    }
+
+    .diteils {
+        width: 235px;
+        height: 51px;
+        border: solid 2px;
+        border-radius: 1px;
+        border-color: rgb(41, 116, 197);
+        background-color: rgb(156, 213, 245);
+        color: white;
+    }
+
+    .product .diteils {
+        margin-bottom: 0;
+    }
+
+    .diteils p {
+        float: right;
+    }
+
+    .left {
+        margin-left: 10px;
+        margin-right: auto;
+        /* border: solid 2px; */
+        border-radius: 3px;
+        /* border-color: rgb(232, 232, 238); */
+        margin-top: 5px;
+        float: left;
+    }
+
+    .form {
+        float: right;
+        margin-right: 60px;
+        margin-top: 30px;
+    }
+
+    .leftSidePage {
+        width: 300px;
+        height: 400px;
+        float: left;
+        /*border-right: solid 2px;*/
+        margin-left: 30px;
+        margin-top: 30px;
+        /*border-radius: 5px;
+                 border-color: rgb(41, 116, 197);*/
+        /*/*background-color: rgb(252, 252, 252);*/ */;
+    }
+
+    .login {
+        width: 299px;
+        height: 110px;
+        border: solid 1px;
+        background-color: rgb(232, 232, 240);
+        border-radius: 3px;
+        text-align: center;
+    }
+
+    .leftSidePage h3 {
+        text-align: center;
+        border: solid 1px;
+        border-radius: 3px;
+        width: 280px;
+        margin-left: 10px;
+        border-color: rgb(41, 116, 197);
+        background-color: rgb(76, 192, 214);
+        color: white;
+    }
+
+    .leftSidePage input {
+        width: 180px;
+        text-align: center;
+        border-radius: 5px;
+        margin-left: 50px;
+        height: 20px;
+        margin-top: 5px;
+    }
+
+    .leftSidePage p {
+        float: left;
+        margin-left: 30px;
+        margin-top: 15px;
+        /* font-family: -webkit-pictograph; */
+        font-size: 14px;
+        /* border-bottom: solid 1px; */
+        /* border-radius: 2px; */
+        width: 60px;
+        /* background-color: rgb(228, 228, 228); */
+        text-align: center;
+        border-color: rgb(182, 182, 182);
+        color: rgb(29, 131, 179);
+        width: 90px;
+    }
+
+    .leftSidePage a {
+        color: white;
+    }
+
+    .btn {
+        float: right;
+        margin-right: 70px;
+        margin-top: 10px;
+    }
+
+        .btn button {
+            width: 80px;
+            font-family: -webkit-pictograph;
+            font-size: 17px;
+            height: 20px;
+            color: rgb(29, 131, 179);
+        }
+
+    /*.modaa {
+        border-right: solid 2px;
+        height: 250px;
+        border-radius: 5px;
+        border-color: rgb(10, 87, 170);
+        background-color: rgb(250, 250, 250);
+        /* border-left: solid 2px; 
+        border-left-color: rgb(10, 87, 170);
+        width: 300px;
+        float: right;
+        margin-top: 45px;
+    }*/
+
+    .modaa h3:hover {
+        background-color: rgb(57, 233, 205);
+    }
+
+    .modaa p {
+        background-color: rgb(15, 146, 219);
+        color: white;
+        border-radius: 3px;
+        height: 25px;
+        width: 100px;
+        float: right;
+        border: solid 1px;
+        border-color: rgb(0, 20, 255);
+        margin-right: 10PX;
+    }
+
+        .modaa p:hover {
+            background-color: rgb(57, 233, 205);
+        }
+
+    .koteret {
+        float: right;
+    }
+
+    .kot {
+    }
+
+    .conect {
+        border-right: solid 2px;
+        border-radius: 5px;
+        height: 150px;
+        border-color: rgb(10, 87, 170);
+        background-color: rgb(250, 250, 250);
+        border-left: solid 2px;
+        border-left-color: rgb(10, 87, 170);
+    }
+
+    .navbar {
+        width: 600px;
+        height: 50px;
+        background-color: rgb(182, 182, 182);
+        float: right;
+    }
+
+    .navbar-navigation li {
+        float: right;
+        margin-right: 10px;
+        list-style: none;
+    }
+
+    .navigation {
+        height: 25px;
+    }
+    .cars-cat{
+        /*width:900px;
+        display:block;*/
+        /*border: solid 1px black;*/
+    }
+</style>
+<div id="catecorey-box">
+
+    <div class="serch-bar">
+        <select>
+            <option>בחר קטגוריה</option>
+            <option class="Car">רכב</option>
+            <option class="SecondHand">יד שנייה</option>
+        </select>
+
+    </div>
+    <div class="input">
+        <input placeholder="חיפוש לפי קטגוריה" />
+        <div class="serch-btn">
+            <img src="images/Search-icon (2).png" width="38" height="33">
+        </div>
+    </div>
+</div>
+
+<div id="page">
+    <div class="leftSidePage">
+        <div class="modaa">
+            <p class="publish_new_post"> @Html.ActionLink("פירסום מודעה", "CreateSeller", "PersonalArea")</p>
+            <p class="get_seller_post">@Html.ActionLink("המודעות שלי", "Index", "PostBase") </p>
+            <p class="edit_post">@Html.ActionLink("עריכת מודעה", "PublishPost", "PostBase") </p>
+            <p class="delet_post">@Html.ActionLink("מחיקת מודעה", "RemovePost", "PostBase") </p>
+        </div>
+    </div>
+
+    <div class=" col-lg-6 cars-cat">
+
+        <div class="form">
+            <div class="product ">
+                <p><a href=""><img src="images/electronics.jpg" alt="" width="180" height="180" class="left" /></a></p>
+
+                <div class="diteils">
+                    <p>פרטים</p>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="product">
+                <p><a href=""><img src="images/electronics.jpg" alt="" width="180" height="180" class="left" /></a></p>
+
+                <div class="diteils">
+                    <p>פרטים</p>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="product">
+                <p><a href=""><img src="images/electronics.jpg" alt="" width="180" height="180" class="left" /></a></p>
+                <div class="diteils">
+                    <p>פרטים</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" col-lg-6 second-hand-cat">
+        <div class=" form">
+            <div class="product">
+                <p><a href=""><img src="images/electronics.jpg" alt="" width="180" height="180" class="left" /></a></p>
+
+                <div class="diteils">
+                    <p>פרטים</p>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="product">
+                <p><a href=""><img src="images/electronics.jpg" alt="" width="180" height="180" class="left" /></a></p>
+
+                <div class="diteils">
+                    <p>פרטים</p>
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="product">
+                <p><a href=""><img src="images/electronics.jpg" alt="" width="180" height="180" class="left" /></a></p>
+
+                <div class="diteils">
+                    <p>פרטים</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+@section scripts {
+
+
+    <script>
+        $(document).ready(function () {
+            $(".publish_new_post").click(function (e) {
+              
+            })
+
+        });
+    </script>
+    }
+
+
+

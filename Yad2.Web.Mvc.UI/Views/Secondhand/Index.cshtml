@@ -1,0 +1,479 @@
+﻿@model Yad2.Services.Messages.GetListResponse<Yad2.Model.Entities.SecondHand>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Style/StyleSheet1.css" rel="stylesheet" />
+<link href="~/Style/MainStyle.css" rel="stylesheet" />
+<script src="~/Scripts/Scondhand.js"></script>
+
+
+<style>
+    .selecet-input {
+        height: 78px;
+        background-color: white;
+        /* border-color: green; */
+        border: solid 2px;
+        margin-top: 5px;
+        border-radius: 2px;
+        border-color: rgb(11, 166, 11);
+    }
+
+
+
+
+    .lead {
+        margin-bottom: 15px;
+        font-size: 21px;
+        font-weight: 200;
+        color: white;
+    }
+
+    .items-tbl {
+        text-align: right;
+    }
+
+    .Header {
+        text-align: right;
+    }
+
+    .selecet-input td {
+        margin-right: 5px;
+    }
+
+    .td {
+        margin-top: 5px;
+        color: rgb(17, 162, 1);
+        font-size: 14px;
+    }
+
+        .td select {
+            width: 90px;
+            height: 25px;
+            border-color: rgb(245, 232, 232);
+            border-radius: 3px;
+        }
+
+        .td input {
+            height: 25px;
+            border-color: rgb(245, 232, 232);
+            border-radius: 3px;
+        }
+
+        .td p {
+            text-align: center;
+        }
+
+    .serch-btn {
+        width: 100px;
+        height: 60px;
+        float: left;
+        /* border: solid 1px; */
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+        .serch-btn button {
+            width: 90px;
+            height: 25px;
+            margin-top: 23px;
+            /* float: left; */
+            background-color: rgb(10, 174, 13);
+            color: white;
+            border-radius: 3px;
+        }
+
+    .tbl {
+        /*height:50px;*/
+        width: 890px;
+        float: right;
+    }
+
+    .cars-head {
+        height: 300px;
+        width: 1170px;
+        /* border: solid 2px; */
+        background-color: rgb(227, 225, 225);
+        border-radius: 5px;
+        border-color: rgb(26, 136, 180);
+        background-image: url(../Images/AF13_r375_04.jpg);
+    }
+
+    .h1-head {
+        float: right;
+        width: 500px;
+    }
+
+        .h1-head h1 {
+            font-size: 60px;
+            /* margin-right: 10px; */
+            color: rgba(113, 255, 10, 0.95);
+            font-family: cursive;
+            width: 300px;
+            margin-right: 304px;
+            height: 60px;
+            /* border-bottom: solid 1px; */
+            text-align: center;
+            /* border-bottom-style: double; */
+            margin-top: 137px;
+        }
+
+    .cars-details {
+        margin-right: 26px;
+        height: 20px;
+        width: 500px;
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        font-family: cursive;
+        float: right;
+    }
+
+    .cars-link {
+        height: 20px;
+        margin-top: -41px;
+        float: right;
+    }
+
+        .cars-link li {
+            height: 20px;
+            /* margin-top: -41px; */
+            /* float: right; */
+            float: right;
+            margin-right: 30px;
+        }
+
+        .cars-link a {
+            color: rgb(251, 251, 251);
+            font-size: 23px;
+            border-bottom: solid 2px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-color: rgb(97, 255, 0);
+        }
+
+    .galery-list {
+        width: 200px;
+        height: 30px;
+        /* border: solid 1px; */
+        float: right;
+        margin-top: 20px;
+    }
+
+        .galery-list button {
+            margin-top: 5px;
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: rgb(10, 174, 13);
+            color: white;
+        }
+
+    .test {
+        margin-top: 5px;
+        width: 90px;
+        height: 35px;
+        border-radius: 5px;
+        background-color: rgb(91, 154, 235);
+        color: white;
+        margin-right: 3px;
+    }
+
+    .carsheadimg {
+        height: 150px;
+        width: 200px;
+        float: left;
+        /* border: solid 1px; */
+        margin-left: 200px;
+        margin-top: 5px;
+    }
+
+    .tbody {
+        background-color: rgba(182, 210, 226, 0.44);
+        /* border: solid 1px; */
+        border-left: solid 2px;
+        border-right: solid 2px;
+        /* border-bottom-left-radius: 3px; */
+        border-color: rgb(219, 219, 219);
+    }
+
+        .tbody td {
+            border-bottom: solid 1px;
+        }
+
+    .thead {
+        border: solid 1px;
+        background-color: rgb(45, 169, 53);
+        color: white;
+    }
+
+    .items-tbl table {
+        border: solid 1px;
+    }
+
+    .selecet-input {
+        height: 78px;
+        background-color: white;
+        border-color: green;
+    }
+
+    .viewAllPost li {
+        color: red;
+    }
+</style>
+
+
+
+
+@*
+    pmin - min price
+    pmax - max price
+*@
+
+<div class="cars-head">
+    <div class="h1-head">
+        <h1>מודעות רכב</h1>
+    </div>
+</div>
+<div class="cars-link">
+    <ul>
+        <li class="active"><a href="@Url.Action("Index","Cars")">פרטי</a></li>
+        <li><a href="@Url.Action("Index","Scooter")">קטנועים</a></li>
+        <li><a href="@Url.Action("Index","Motorcycle")">אופנועים</a></li>
+        <li><a href="@Url.Action("Index","Jeep")">ג'יפים</a></li>
+        <li><a href="@Url.Action("Index", "Commercial")">מסחריות</a></li>
+        <li><a href="@Url.Action("Index", "Secondhand")">יד 2</a></li>
+
+    </ul>
+</div>
+
+@using (Html.BeginForm("Index", "SecondHand", FormMethod.Get))
+{
+    <div class="selecet-input">
+        <div class="tbl">
+            <table>
+                <tr>
+                    <td>
+                        <div class="td" style="margin-right:10px;">
+                            <p style=" ">
+                                איזורים בארץ
+                            </p>
+                            <select name="reg"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td" style="margin-right:10px;">
+                            <p style="width:70px;">קטגוריה</p>
+                            <select name="cat" id="cat"></select>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="td" style="margin-right:10px;">
+                            <p style="width:70px;">תת-קטגוריה</p>
+                            <select name="subcat"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td" style="margin-right:10px;">
+                            <p style="width:70px;">משנה</p>
+                            <select name="ymin"></select>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td" style="margin-right:10px;">
+                            <p style="width:70px;">עד שנה</p>
+                            <select name="ymax"></select>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <div class="td" style="margin-right:10px;">
+                            <p style="width:70px;">ממחיר</p>
+                            <input name="pmin" placeholder="ממחיר" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td" style="margin-right:10px;">
+                            <p style="width:70px;">עד מחיר</p>
+                            <input name="pmax" placeholder="עד מחיר" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td" style="margin-right:10px;">
+                            <p style="width:70px;">טקסט חופשי</p>
+                            <input name="txt" placeholder="ממחיר" />
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <div class="serch-btn">
+            <button>חפש</button>
+        </div>
+
+    </div>
+}
+
+<div class="galery-list">
+    <button class="rowtable">תצוגת טבלה</button>
+    <button class="imgtable">תצוגת גלריה</button>
+</div>
+<!-- Nav tabs -->
+<!-- Tab panes -->
+@*<div class="tab-content">
+        <div class="tab-pane fade in active" id="items-resault">...</div>
+        <div class="tab-pane" id="marked-item">...</div>
+        removeclass
+    </div>*@
+<div class="viewAllPost">
+    <ul class="nav nav-tabs">
+        <li><button class="removmark" style="display:none;">מחק מסומנות</button></li>
+        <li><button class="tests">מודעות מסומנות</button></li>
+        <li><a href="@Url.Action("Index","Cars")">כל המודעות</a></li>
+
+        @*<li><button name="#marked-item" title="" id="tests" data-toggle="tab">מודעות מסומנות</button></li>
+            <li><button name="#marked-item" class="test" id="tests" data-toggle="tab">כל המודעות</button></li>*@
+
+    </ul>
+</div>
+
+<div class="row marketing">
+    @foreach (string[] fieldss in Model.Items)
+    {
+        <div class="col-md-4">
+            <div class="thumbnail product-box">
+                <img data-src="holder.js/140x140" class="img-thumbnail" alt="140x140" src="../Images/ferra.jpg" style="width: 140px; height: 140px; margin-left: auto; margin-right: auto;">
+                <div class="caption">
+                    <table>
+                        <tr>
+                            <td class="chak">
+                                @fieldss[4]
+                            </td>
+                            <td class="chak">
+
+                                @fieldss[3]
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+
+
+<table class="items-tbl table table-hover info" align="center" style="max-width: 83%;">
+    <thead>
+        <tr>
+            <th></th>
+            <th>תאריך</th>
+            <th>תמונה</th>
+            <th>מחיר</th>
+            <th>תיאור פריט</th>
+            <th>איזור בארץ</th>
+            <th>קטגוריה</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (string[] fields in Model.Items)
+        {
+          
+            <tr data-id="@fields[0]">
+
+                <td class="chak">
+                    לפרטים
+                </td>
+
+                <td class="chak">
+                    @fields[6]
+                </td>
+                <td class="chak">
+                    @if (fields[5] /* pics */ == "true")
+                    {
+                        <img src="" alt="" />
+                    }
+                </td>
+               
+                <td class="chak">
+                    @fields[4]
+                </td>
+                <td class="chak">
+                    @fields[3]
+                </td>
+
+                <td class="chak">
+                    @fields[2]
+                </td>
+                <td class="chak Model">
+                    @fields[1]
+                </td>
+
+
+                <td class="fav addModaa"></td>
+
+            </tr>
+
+            <tr class="post-info" style="display:none;">
+                <td colspan="4"></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="paging">
+    @Html.PageLinks(Model.CurrentPage, Model.TotalPages, x => Url.Action("Index", "Cars", new
+{
+
+    p = x,
+    ipp = Model.ItemsPerPage,
+    pmin = (Model.FilterObject as Yad2.Services.Filters.SecondhandsFilter).PriceMin,
+    pmax = (Model.FilterObject as Yad2.Services.Filters.SecondhandsFilter).PriceMax,
+    state = (Model.FilterObject as Yad2.Services.Filters.SecondhandsFilter).State,
+    cat = (Model.FilterObject as Yad2.Services.Filters.SecondhandsFilter).Category,
+    subcat = (Model.FilterObject as Yad2.Services.Filters.SecondhandsFilter).SubCategory,
+    reg = (Model.FilterObject as Yad2.Services.Filters.SecondhandsFilter).RegionId,
+
+}))
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function (e) {
+            $(".row .marketing").hide();
+            $(".imgtable").click(function (e) {
+                $(".row .marketing").show();
+                $(".info").hide();
+
+            })
+            $(".rowtable").click(function (e) {
+                $(".row .marketing").hide();
+                $(".info").show();
+
+            })
+            //$(".btn-primary").click(function (e) {
+            //    $(".tablewq").hide();
+            //    $(".table-hover").show();
+            ////});
+            //$(".glar").click(function (e) {
+            //    $(".tablewq").show();
+            //    $(".table-hover").hide();
+            //});
+
+
+
+        });
+    </script>
+
+}
+
+@*<script src="~/Scripts/bootstrap.min.js"></script>
+    @*@*@*@Scripts.Render("~/bundles/yad2.cars")*@*@*@*@
+
+
+
+

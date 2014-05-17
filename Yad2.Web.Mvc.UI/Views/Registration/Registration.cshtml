@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Registration";
+}
+<style>
+    .col-md-9 {
+        width: 259px;
+        float: right;
+    }
+
+    .active {
+        border-color: red;
+    }
+</style>
+
+
+
+<div class="col-md-9">
+    <h2>הרשמה</h2>
+    <div class="new-seller-form">
+        <form role="form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">שם:</label>
+                <input type="text" class="form-control" id="Name" placeholder="הכנס שם">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">טלפון:</label>
+                <input type="text" class="form-control" id="Phone1" placeholder="הכנס טלפון">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">טלפון נוסף:</label>
+                <input type="text" class="form-control" id="Phone2" placeholder="הכנס טלפון נוסף">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">כתובת:</label>
+                <input type="text" class="form-control" id="FullAddress" placeholder="הכנס כתובת">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">כתובת מייל:</label>
+                <input type="email" class="form-control" id="Email" placeholder="הכנס כתובת מייל ">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">סיסמא:</label>
+                <input type="password" class="form-control" id="Password" placeholder="הכנס סיסמא">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">אימות סיסמא:</label>
+                <input type="password" class="form-control" id="ConfirmPassword" placeholder="הכנס אימות סיסמא">
+            </div>
+            <button type="button" class="btn btn-default submit-newSeller-btn">שלח</button>
+        </form>
+        <div>
+            <img src="~/Images/WELCOM.jpg" style="margin-top: -654PX;
+margin-right: 329PX;" />
+        </div>
+    </div>
+
+</div>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+
+                $(".submit-newSeller-btn").click(function (e) {
+                    e.preventDefault();
+                    var isValid = true;
+
+                    var name = $("input[id=Name]").val();
+                    if ($("input[id=Name]").val() == "") {
+                        $("input[id=Name]").addClass("active");
+                        isValid = false;
+                    }
+                    var phone1 = $("input[id=Phone1]").val();
+                    if ($("input[id=Phone1]").val() == "") {
+                        $("input[id=Phone1]").addClass("active");
+
+                        isValid = false;
+                    }
+                    var phone2 = $("input[id=Phone2]").val();
+                    if ($("input[id=Phone2]").val() == "") {
+                        $("input[id=Phone2]").addClass("active");
+
+                        isValid = false;
+                    }
+                    var fullAdd = $("input[id=FullAddress]").val();
+                    if ($("input[id=FullAddress]").val() == "") {
+                        $("input[id=FullAddress]").addClass("active");
+                        isValid = false;
+                    }
+                    var email = $("input[id=Email]").val();
+                    if ($("input[id=Email]").val() == "") {
+                        $("input[id=Email]").addClass("active");
+                        isValid = false;
+                    }
+                    var password = $("input[id=Password]").val();
+                    if ($("input[id=Password]").val() == "") {
+                        $("input[id=Password]").addClass("active");
+                        isValid = false;
+                    }
+                    var confimPassword = $("input[id=ConfirmPassword]").val();
+                    if ($("input[id=Password]").val() == "") {
+                        $("input[id=Password]").addClass("active");
+                        isValid = false;
+                    }
+                    if (isValid) {
+                        var dataToSend = {
+                            User: {
+                                Email: email,
+                            },
+                            Seller: {
+                                Name: name,
+                                Phone1: phone1,
+                                Phone2: phone2,
+                                FullAddress: fullAdd
+                            },
+                            Pass: password,
+                            PassConfirm: confimPassword
+                        }
+                    }
+                    $.ajax({
+                        url: '/Registration/Registration',
+                        data: JSON.stringify(dataToSend),
+                        contentType: "application/json",
+                        dataType: "json",
+                        type: "POST",
+                        success: function (r) {
+                            if (r.Success) {
+                                alert("User created seccecfuly");
+                                window.location.href = '@Url.Action("Home", "Home")';
+
+                            }
+                            else alert(r.Message);
+                        },
+                        error: function (r) {
+                            alert("error in data");
+                        }
+                    });
+                });
+            })
+        ;
+    </script>
+}

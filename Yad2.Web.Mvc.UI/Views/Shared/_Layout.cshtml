@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+
+
+    <style>
+        .auto-comp-res {
+            position: absolute;
+            background: white;
+            border: 1px solid black;
+        }
+
+            .auto-comp-res > div:hover {
+                background: #d4d3d3;
+            }
+    </style>
+
+    @*<script src="../Scripts/bootstrap.min.js"></script>
+        <link href="../Content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="../Content/css/bootstrap-theme.min.css" rel="stylesheet" />*@
+    <script src="../Scripts/jquery-1.8.2.min.js"></script>
+
+    <link href="~/bootstrap-3.1.1-dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+
+    <script src="~/bootstrap-3.1.1/js/dropdown.js"></script>
+    <script src="~/bootstrap-3.1.1/js/modal.js"></script>
+
+</head>
+
+<body style="direction: rtl; padding-top: 50px; padding-bottom: 20px;">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="#">GeviA</a>
+            </div>
+            <div class="col-lg-6" style="margin-top: 8px; left: 115px; direction: ltr;">
+            </div>
+            <div class="navbar-form navbar-right" style="margin-top: 8px;">
+                <div class="user-connection">
+                    @*<a class="navbar-brand" href="@Url.Action("Index","PersonalArea")">פרסם מודעה</a>*@
+                    <button type="button" class="btn btn-success registration" style="margin-left: 5px;">הרשמה</button>
+                    <button type="button" class="btn btn-success login" style="margin-left: 5px;">כניסה </button>
+
+                    <button type="button" class="btn btn-link logout-btn">LogOut</button>)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link id="bsstyle" href="~/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close pull-left" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">שם:</label>
+                        <input type="text" class="form-control" name="Name" placeholder="הכנס שם" value="Shuki">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">סיסמא:</label>
+                        <input type="password" class="form-control" name="Password" placeholder="הכנס סיסמא" value="1234">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cancel" data-dismiss="modal">סגור</button>
+                    <button type="button" class="btn btn-success submit-login-btn">התחבר</button>
+                    <button id="facebook" type="button" class="btn btn-success submit-login-btnFacebook">facebook</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" style="direction: rtl; /* float: right; */
+    margin-top: 30px;">
+        <!-- Example row of columns -->
+
+        <div class="row" style="/* width: 1118px; */
+    /* margin: 0 auto; */">
+            @RenderBody()
+            @RenderSection("scripts", required: false)
+
+            @Scripts.Render("~/bundles/jquery")
+            @Scripts.Render("~/bundles/modernizr")
+
+            <script src="~/bootstrap-3.1.1/js/modal.js"></script>
+            <script src="../Scripts/jquery-1.8.2.min.js"></script>
+            <script src="~/bootstrap-3.1.1/js/dropdown.js"></script>
+            <script src="~/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+        </div>
+    </div>
+    <div class="footer">
+        <p>© Company 2014</p>
+    </div>
+
+
+    <script>
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i].trim();
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+        function createCookie(name, value, days) {
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "; expires=" + date.toGMTString();
+            }
+            else var expires = "";
+            document.cookie = name + "=" + value + expires + "; path=/";
+        }
+        var yad1 = {
+            handlers: {
+                checkCookie: function () {
+                    var username = getCookie("un");
+                    if (username) {
+                        $(".registration").hide();
+                        $(".login").hide();
+                        $(".navbar-right").html('<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Hi ' + username + ' <b class="caret"></b></a>'
+                          + '<ul class="dropdown-menu">'
+                          + '<li><a href="#">פרסם מודעה</a></li>'
+                          + '<li><a href="#">למודעות שלי</a></li>'
+                          + '<li><a href="#">עדכן פרטים</a></li>'
+                          + '<li class="divider"></li>'
+                          + '<li class="direction-to-Personal-Area"><a href="@Url.Action("Index", "PersonalArea")">עבור לאזור האישי</a></li></ul>'
+                        + '<button type="button" class="btn btn-link logout">LogOut</button>')
+                    }
+                }
+            }
+        }
+        $(document).ready(function () {
+            $(".user-connection ul").hide();
+            $(".dropdown-toggle").hide();
+            $(".logout-btn").hide();
+            yad1.handlers.checkCookie();
+
+
+            $(".registration").click(function (e) {
+                window.location.href = '@Url.Action("Registration", "Registration")';
+            })
+
+            //login:
+            $(".login").click(function (e) {
+                e.preventDefault();
+                $("#myModal").modal('show');
+
+            })
+            $("#myModal input").click(function (e) {
+                if ($("#myModal input #focusedInput")) {
+                    $("#myModal input #focusedInput").attr("id", "");
+
+                    $(e.target).attr("id", "focusedInput");
+                }
+
+            })
+            $("#facebook").click(function (e) {
+
+                window.location.href = '@Url.Action("FacebookLogin", "Login")';
+            });
+
+
+            $(".submit-login-btn").click(function (e) {
+                debugger;
+                var isValid = true;
+
+                var userName = $("input[name=Name]").val();
+                if ($("input[id=Name").val() == "") {
+                    isValid = false;
+                    //alert("User name empty");
+                    $("#myModal.form-group").addClass("has-error has-feedback");
+                    $("input[id=Name").parent().html('<span class="glyphicon glyphicon-remove form-control-feedback"></span>');
+
+                }
+                var password = $("input[name=Password]").val();
+                if ($("input[id=Password").val() == "") {
+                    isValid = false;
+                    alert("Password name empty");
+                }
+
+                if (isValid) {
+                    var dataToSend = {
+                        username: userName,
+                        password: password
+                    }
+                }
+
+                $.ajax({
+                    url: '/Login/Login',
+                    data: JSON.stringify(dataToSend),
+                    contentType: "application/json",
+                    dataType: "json",
+                    type: "POST",
+                    success: function (r) {
+                        if (r.Success) {
+                            $("#myModal").modal('hide');
+
+                            alert("User connected seccecfuly");
+                            yad1.handlers.checkCookie();
+                            $(".user-connection ul").show();
+                            $(".dropdown-toggle").show();
+                            $(".logout-btn").show();
+
+                        }
+                        else alert(r.Message);
+                    },
+                    error: function (r) {
+                        alert("error in data");
+                    }
+                });
+
+            })
+
+
+
+
+
+
+
+
+            //log out
+            $(".navbar-right").click(function (e) {
+                if ($(e.target).hasClass("logout")) {
+                    e.preventDefault();
+                    createCookie(".ASPXAUTH", "", -1);
+                    createCookie("un", "", -1);
+                    window.location.href = '@Url.Action("Home", "Home")';
+                }
+            });
+
+
+
+        });
+
+
+
+    </script>
+
+</body>
+</html>

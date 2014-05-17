@@ -1,0 +1,281 @@
+﻿<!-- Main jumbotron for a primary marketing message or call to action -->
+<style>
+    .img-thumbnail:hover {
+        border: 1px solid;
+        background-color: #adc2f5;
+        width: 180px !important;
+        height: 150px !important;
+    }
+
+    h1:hover {
+        color: #adc2f5;
+    }
+    .pic-cat {
+        float: right;
+        margin-right: 10px;
+    }
+    .cat-head {
+        text-align: center;
+        color: rgb(49, 133, 61);
+        border-right: solid 1px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-left: solid 1px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background-color: rgba(235, 239, 240, 0.2);
+    }
+    .imag {
+
+    }
+    .cars {
+        margin-top: 50px;
+    }
+        .cars h1 {
+            font-family: cursive;
+            font-size: 45px;
+            color: rgb(40, 87, 47);
+        }
+    .second-heand {
+        margin-top: 25px;
+    }
+    .all-post {
+        float: right;
+        margin-top: 80px;
+    }
+    body {
+        background-color: rgba(255, 251, 251, 0.76);
+    }
+    .serch-bar {
+        height: 35px;
+        width: 600px;
+        float: right;
+        border: solid 2px;
+        background-color: white;
+        /* border: solid; */
+        border-radius: 3px;
+        margin-right: 120px;
+        border-color: rgba(22, 135, 28, 0.6);
+        margin-top:50px;
+    }
+    .serch {
+        margin-top: 1px;
+    }
+        .serch select {
+            width: 120px;
+            height: 26px;
+            border-color: rgb(255, 255, 255);
+            border: solid 1px;
+            border-color: white;
+        }
+        .serch input {
+            height: 27px;
+            width: 423px;
+            border-color: rgb(246, 235, 235);
+            border: solid 1px;
+            border-color: white;
+            border-right: solid 2px;
+            border-right-color: rgba(22, 135, 28, 0.6);
+            border-left: solid 2px;
+            border-left-color: rgba(22, 135, 28, 0.6);
+            text-align: center;
+        }
+    .serch-bar img {
+        float: left;
+        width: 27px;
+        margin-left: 4px;
+        height:29px;
+    }
+    .hom-page-head {
+        height: 150px;
+        border: solid 1px;
+        background-image: url(../Images/close-deal.jpg);
+    }
+</style>
+<div class="container" style="
+    direction: rtl;
+    /* float: right; */
+    margin-top: 30px;
+">
+    <!-- Example row of columns -->
+
+    <div class="row" style="  /* width: 1118px; */ /* margin: 0 auto; */ ">
+        <div class="col-md-10" style=" /* margin-top: 27px; */  margin: 0 auto; ">
+
+            <div class="hom-page-head">
+           <div class="serch-bar">
+               <div class="serch">
+                   <select><option>בחר קטגוריה</option></select>
+                   <input placeholder="חיפוש..."/>
+                   <img  src="~/Images/efefdddd0b661b9e8b4b8a0b6edb4f86.png" />
+               </div>
+             
+           </div>
+           </div>
+            <div class="cars">
+                <h1>רכב</h1>
+            <div class="pic-cat" style="width:160px;height:160px;">
+                <div class="cat-head"><h3><a href="@Url.Action("Index","Cars")">פרטי</a></h3></div>
+                <div class="imag">
+                    <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/cars2 (4).jpg" style="width: 160px; height: 160px; margin-bottom: 20px; margin-left: 20px;">
+                </div>
+
+            </div>
+                
+            <div class="pic-cat" style="width:160px;height:160px;">
+                <div class="cat-head"><h3><a href="@Url.Action("Index","Commercial")">מסחרי</a></h3>
+                </div>
+                <div class="imag">
+                    <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/ProAce-2.jpg" style="width: 160px; height: 160px; margin-left: 20px;">
+                </div>
+            </div>
+            <div class="pic-cat" style="width:160px;height:160px;">
+                <div class="cat-head">
+                    <h3><a href="@Url.Action("Index","Scooter")">קטנועים</a></h3>
+                </div>
+                <div class="imag">
+                    <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/LoneStarBridge-450.jpg" style="width: 160px; height: 160px; margin-left: 20px;">
+                </div>
+            </div>
+                </div>
+        <div class="pic-cat" style="width:160px;height:160px;">
+            <div class="cat-head">
+                <h3><a href="@Url.Action("Index","Jeep")">ג'יפים</a></h3>
+            </div>
+            <div class="imag">
+                <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/images (29).jpg" style="width: 160px; height: 160px; margin-left: 20px;">
+            </div>
+            </div>
+
+        <div class="pic-cat" style="width:160px;height:160px;">
+            <div class="cat-head">
+                <h3><a href="@Url.Action("Index","Motorcycle")"> אופנוע</a></h3>
+            </div>
+            <div class="imag">
+                <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/MOTO.jpg" style=" width: 160px; height: 160px;">
+            </div>
+            </div>
+            <div class="all-post">
+                <a class="btn btn-primary" href="/Cars/Index" role="button">לכל המודעות  »</a>
+            </div>          
+        </div>
+
+     
+
+    </div>
+    @*<div class="row" style="
+    /* width: 1118px; */
+    /* margin: 0 auto; */
+">*@
+    <div class="col-md-10" style="
+    /* margin-top: 27px; */
+    margin: 0 auto;
+">
+        <div class="cars">
+            <h1>יד שנייה</h1>
+            <div class="pic-cat" style="width: 160px; height: 160px;">
+                <div class="cat-head"><h3><a href="/SecondHand/Index?reg=&cat=322&subcat=&pmin=&pmax=">מוצרי חשמל</a></h3></div>
+                <div class="imag">
+                    <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/appliances.jpg" style="width: 160px; height: 160px;margin-bottom: 20px;margin-left: 20px;">
+                </div>
+
+            </div>
+
+            <div  class="pic-cat" style="width: 160px; height: 160px; ">
+                <div class="cat-head">
+                    <h3><a href="/SecondHand/Index?reg=&cat=669&subcat=&pmin=&pmax=">ריהוט</a> </h3>
+                </div>
+                <div class="imag">
+                    <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/61065.jpeg" style="width: 160px; height: 160px; margin-left: 20px;">
+                </div>
+            </div>
+            <div class="pic-cat" style="width: 160px; height: 160px; ">
+                <div class="cat-head">
+                    <h3><a href="/SecondHand/Index?reg=&cat=449&subcat=&pmin=&pmax="> סלולר</a></h3>
+                </div>
+                <div class="imag">
+                    <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/911904128.jpg" style="width: 160px; height: 160px; margin-left: 20px;">
+                </div>
+            </div>
+        </div>
+        <div class="pic-cat" style="width: 160px; height: 160px; ">
+            <div class="cat-head">
+                <h3><a href="/SecondHand/Index?reg=&cat=182&subcat=&pmin=&pmax=">לבית</a></h3>
+            </div>
+            <div class="imag">
+                <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/1262249393-1.jpg" style="width: 160px; height: 160px; margin-left: 20px;">
+            </div>
+        </div>
+
+        <div class="pic-cat" style="width: 160px; height: 160px; ">
+            <div class="cat-head">
+                <h3><a href="/SecondHand/Index?reg=&cat=262&subcat=&pmin=&pmax=">לתינוק וליד</a></h3>
+            </div>
+            <div class="imag">
+                <img class="img-thumbnail" data-src="holder.js/140x140" alt="140x140" src="~/Images/361819-CARTERS-2013.jpg" style="width: 160px; height: 160px;">
+            </div>
+        </div>
+        <div class="all-post">
+            <a class="btn btn-primary" href="/Cars/Index" role="button">לכל המודעות  »</a>
+        </div>
+    </div>
+
+
+    </div>
+    <hr>
+    <footer>
+        <p>© Company 2014</p>
+    </footer>
+</div> <!-- /container -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+@section scripts {
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script>
+    $("input[name=txt]").keyup(function (e) {
+
+        $.ajax({
+
+            url: '/Cars/AutoComplete',
+            data: { txt: $(this).val() },
+            dataType: "json",
+            success: function (r) {
+                $(".auto-comp-res").remove();
+                var resultsDiv = $("<div class='auto-comp-res'></div>")
+                $(r.Values).each(function(i,v){
+                    resultsDiv.append("<div>" + v.substring(0,13) + "</div>");
+                });
+
+                var inputTarget = $(e.target);
+
+                resultsDiv.css({ position: "absolute", top: (inputTarget.offset().top + 26) + "px", left: inputTarget.offset().left + "px", width: inputTarget.width() + "px", "max-width": inputTarget.width() + "px" }).appendTo(document.body);
+
+                $(document).on("click.autoComp", function (ev) {
+                    var target = $(ev.target);
+
+                    if (target.closest(".auto-comp-res").length == 1) $("input[name=txt]").val(target.text());
+
+                    $(document).off("click.autoComp");
+                    $(".auto-comp-res").remove();
+                });
+
+            }
+        });
+
+    });
+
+
+    </script>
+
+
+
+
+
+
+
+}
+
+

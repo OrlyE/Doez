@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB186F4C-7277-447A-AAA3-F694590C191F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yad2.Web.Mvc.UI</RootNamespace>
+    <AssemblyName>Yad2.Web.Mvc.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CustomModelBinders\CommercialsFilterModelBinder.cs" />
+    <Compile Include="CustomModelBinders\JeepsFilterModelBinder.cs" />
+    <Compile Include="CustomModelBinders\MotorcycleFilterModelBinder.cs" />
+    <Compile Include="CustomModelBinders\ScooterFilterModelBinder.cs" />
+    <Compile Include="CustomModelBinders\SecondhandsFilterModelBinder.cs" />
+    <Compile Include="CustomModelBinders\TrucksFilterModelBinder.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelpers\PageLinks.cs" />
+    <Compile Include="CustomModelBinders\BindingContextExtensionMethods.cs" />
+    <Compile Include="CustomModelBinders\CarsFilterModelBinder.cs" />
+    <Compile Include="Infrastructure\GenerateBaseDB.cs" />
+    <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Models\CarsListModel.cs" />
+    <Compile Include="Models\CommercialLisModel.cs" />
+    <Compile Include="Models\JeppListModel.cs" />
+    <Compile Include="Models\MotorcycleListModel.cs" />
+    <Compile Include="Models\ScooterModel.cs" />
+    <Compile Include="Models\TrucksListModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap-3.1.1-dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.1.1-dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.1.1-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.1.1-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.1.1-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.1.1-dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.1.1\dist\css\bootstrap-theme.css" />
+    <Content Include="bootstrap-3.1.1\dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.1.1\dist\css\bootstrap.css" />
+    <Content Include="bootstrap-3.1.1\dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.1.1\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.1.1\dist\js\bootstrap.js" />
+    <Content Include="bootstrap-3.1.1\dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.1.1\docs\about.html" />
+    <Content Include="bootstrap-3.1.1\docs\assets\css\docs.css" />
+    <Content Include="bootstrap-3.1.1\docs\assets\css\docs.min.css" />
+    <Content Include="bootstrap-3.1.1\docs\assets\css\pygments-manni.css" />
+    <Content Include="bootstrap-3.1.1\docs\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="bootstrap-3.1.1\docs\assets\ico\favicon.ico" />
+    <Content Include="bootstrap-3.1.1\docs\assets\img\components.png" />
+    <Content Include="bootstrap-3.1.1\docs\assets\img\devices.png" />
+    <Content Include="bootstrap-3.1.1\docs\assets\img\sass-less.png" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\application.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\customize.min.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\customizer.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\docs.min.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\ie8-responsive-file-warning.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\raw-files.min.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\vendor\blob.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\vendor\filesaver.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\vendor\holder.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\vendor\jszip.min.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\vendor\less.min.js" />
+    <Content Include="bootstrap-3.1.1\docs\assets\js\vendor\uglify.min.js" />
+    <Content Include="bootstrap-3.1.1\docs\components.html" />
+    <Content Include="bootstrap-3.1.1\docs\css.html" />
+    <Content Include="bootstrap-3.1.1\docs\customize.html" />
+    <Content Include="bootstrap-3.1.1\docs\dist\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap-3.1.1\docs\dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-3.1.1\docs\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.1.1\docs\dist\js\bootstrap.min.js" />
+    <Content Include="bootstrap-3.1.1\docs\examples\blog\blog.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\blog\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\carousel\carousel.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\carousel\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\cover\cover.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\cover\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\dashboard\dashboard.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\dashboard\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\grid\grid.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\grid\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\jumbotron-narrow\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\jumbotron-narrow\jumbotron-narrow.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\jumbotron\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\jumbotron\jumbotron.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\justified-nav\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\justified-nav\justified-nav.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\navbar-fixed-top\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\navbar-fixed-top\navbar-fixed-top.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\navbar-static-top\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\navbar-static-top\navbar-static-top.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\navbar\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\navbar\navbar.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\non-responsive\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\non-responsive\non-responsive.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\offcanvas\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\offcanvas\offcanvas.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\offcanvas\offcanvas.js" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\blog.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\carousel.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\cover.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\dashboard.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\grid.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\jumbotron-narrow.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\jumbotron.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\justified-nav.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\navbar-fixed.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\navbar-static.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\navbar.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\non-responsive.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\offcanvas.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\sign-in.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\starter-template.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\sticky-footer-navbar.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\sticky-footer.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\screenshots\theme.jpg" />
+    <Content Include="bootstrap-3.1.1\docs\examples\signin\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\signin\signin.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\starter-template\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\starter-template\starter-template.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\sticky-footer-navbar\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\sticky-footer\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\sticky-footer\sticky-footer.css" />
+    <Content Include="bootstrap-3.1.1\docs\examples\theme\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\examples\theme\theme.css" />
+    <Content Include="bootstrap-3.1.1\docs\getting-started.html" />
+    <Content Include="bootstrap-3.1.1\docs\index.html" />
+    <Content Include="bootstrap-3.1.1\docs\javascript.html" />
+    <Content Include="bootstrap-3.1.1\docs\migration.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\ads.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\customizer-variables.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\footer.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\header.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\nav-about.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\nav-components.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\nav-css.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\nav-customize.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\nav-getting-started.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\nav-javascript.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\nav-main.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\nav-migration.html" />
+    <Content Include="bootstrap-3.1.1\docs\_includes\social-buttons.html" />
+    <Content Include="bootstrap-3.1.1\docs\_layouts\default.html" />
+    <Content Include="bootstrap-3.1.1\docs\_layouts\home.html" />
+    <Content Include="bootstrap-3.1.1\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap-3.1.1\Gruntfile.js" />
+    <Content Include="bootstrap-3.1.1\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="bootstrap-3.1.1\grunt\bs-lessdoc-parser.js" />
+    <Content Include="bootstrap-3.1.1\grunt\bs-raw-files-generator.js" />
+    <Content Include="bootstrap-3.1.1\grunt\shrinkwrap.js" />
+    <Content Include="bootstrap-3.1.1\js\affix.js" />
+    <Content Include="bootstrap-3.1.1\js\alert.js" />
+    <Content Include="bootstrap-3.1.1\js\button.js" />
+    <Content Include="bootstrap-3.1.1\js\carousel.js" />
+    <Content Include="bootstrap-3.1.1\js\collapse.js" />
+    <Content Include="bootstrap-3.1.1\js\dropdown.js" />
+    <Content Include="bootstrap-3.1.1\js\modal.js" />
+    <Content Include="bootstrap-3.1.1\js\popover.js" />
+    <Content Include="bootstrap-3.1.1\js\scrollspy.js" />
+    <Content Include="bootstrap-3.1.1\js\tab.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\index.html" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\affix.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\alert.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\button.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\carousel.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\collapse.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\dropdown.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\modal.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\phantom.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\popover.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\scrollspy.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\tab.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\unit\tooltip.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\vendor\jquery.js" />
+    <Content Include="bootstrap-3.1.1\js\tests\vendor\qunit.css" />
+    <Content Include="bootstrap-3.1.1\js\tests\vendor\qunit.js" />
+    <Content Include="bootstrap-3.1.1\js\tooltip.js" />
+    <Content Include="bootstrap-3.1.1\js\transition.js" />
+    <Content Include="bootstrap-3.1.1\test-infra\requirements.txt" />
+    <Content Include="Content\css\bootstrap-theme.css" />
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.1.1-dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.1.1-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.1.1\.editorconfig" />
+    <Content Include="bootstrap-3.1.1\.gitattributes" />
+    <Content Include="bootstrap-3.1.1\.gitignore" />
+    <Content Include="bootstrap-3.1.1\.travis.yml" />
+    <Content Include="bootstrap-3.1.1\bower.json" />
+    <Content Include="bootstrap-3.1.1\CNAME" />
+    <Content Include="bootstrap-3.1.1\composer.json" />
+    <Content Include="bootstrap-3.1.1\CONTRIBUTING.md" />
+    <Content Include="bootstrap-3.1.1\dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.1.1\dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.1.1\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.1.1\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.1.1\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.1.1\docs\dist\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap-3.1.1\docs\dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-3.1.1\docs\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.1.1\docs\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.1.1\docs\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.1.1\docs\jade\customizer-nav.jade" />
+    <Content Include="bootstrap-3.1.1\docs\jade\customizer-variables.jade" />
+    <Content Include="bootstrap-3.1.1\docs\LICENSE" />
+    <Content Include="bootstrap-3.1.1\docs\_data\core-team.yml" />
+    <Content Include="bootstrap-3.1.1\docs\_data\glyphicons.yml" />
+    <Content Include="bootstrap-3.1.1\docs\_data\sass-team.yml" />
+    <Content Include="bootstrap-3.1.1\docs\_data\showcase.yml" />
+    <Content Include="bootstrap-3.1.1\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap-3.1.1\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap-3.1.1\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="bootstrap-3.1.1\grunt\.jshintrc" />
+    <Content Include="bootstrap-3.1.1\js\.jscs.json" />
+    <Content Include="bootstrap-3.1.1\js\.jshintrc" />
+    <Content Include="bootstrap-3.1.1\less\.csscomb.json" />
+    <Content Include="bootstrap-3.1.1\less\.csslintrc" />
+    <Content Include="bootstrap-3.1.1\less\alerts.less" />
+    <Content Include="bootstrap-3.1.1\less\badges.less" />
+    <Content Include="bootstrap-3.1.1\less\bootstrap.less" />
+    <Content Include="bootstrap-3.1.1\less\breadcrumbs.less" />
+    <Content Include="bootstrap-3.1.1\less\button-groups.less" />
+    <Content Include="bootstrap-3.1.1\less\buttons.less" />
+    <Content Include="bootstrap-3.1.1\less\carousel.less" />
+    <Content Include="bootstrap-3.1.1\less\close.less" />
+    <Content Include="bootstrap-3.1.1\less\code.less" />
+    <Content Include="bootstrap-3.1.1\less\component-animations.less" />
+    <Content Include="bootstrap-3.1.1\less\dropdowns.less" />
+    <Content Include="bootstrap-3.1.1\less\forms.less" />
+    <Content Include="bootstrap-3.1.1\less\glyphicons.less" />
+    <Content Include="bootstrap-3.1.1\less\grid.less" />
+    <Content Include="bootstrap-3.1.1\less\input-groups.less" />
+    <Content Include="bootstrap-3.1.1\less\jumbotron.less" />
+    <Content Include="bootstrap-3.1.1\less\labels.less" />
+    <Content Include="bootstrap-3.1.1\less\list-group.less" />
+    <Content Include="bootstrap-3.1.1\less\media.less" />
+    <Content Include="bootstrap-3.1.1\less\mixins.less" />
+    <Content Include="bootstrap-3.1.1\less\modals.less" />
+    <Content Include="bootstrap-3.1.1\less\navbar.less" />
+    <Content Include="bootstrap-3.1.1\less\navs.less" />
+    <Content Include="bootstrap-3.1.1\less\normalize.less" />
+    <Content Include="bootstrap-3.1.1\less\pager.less" />
+    <Content Include="bootstrap-3.1.1\less\pagination.less" />
+    <Content Include="bootstrap-3.1.1\less\panels.less" />
+    <Content Include="bootstrap-3.1.1\less\popovers.less" />
+    <Content Include="bootstrap-3.1.1\less\print.less" />
+    <Content Include="bootstrap-3.1.1\less\progress-bars.less" />
+    <Content Include="bootstrap-3.1.1\less\responsive-utilities.less" />
+    <Content Include="bootstrap-3.1.1\less\scaffolding.less" />
+    <Content Include="bootstrap-3.1.1\less\tables.less" />
+    <Content Include="bootstrap-3.1.1\less\theme.less" />
+    <Content Include="bootstrap-3.1.1\less\thumbnails.less" />
+    <Content Include="bootstrap-3.1.1\less\tooltip.less" />
+    <Content Include="bootstrap-3.1.1\less\type.less" />
+    <Content Include="bootstrap-3.1.1\less\utilities.less" />
+    <Content Include="bootstrap-3.1.1\less\variables.less" />
+    <Content Include="bootstrap-3.1.1\less\wells.less" />
+    <Content Include="bootstrap-3.1.1\LICENSE" />
+    <Content Include="bootstrap-3.1.1\package.json" />
+    <Content Include="bootstrap-3.1.1\README.md" />
+    <Content Include="bootstrap-3.1.1\test-infra\npm-shrinkwrap.canonical.json" />
+    <Content Include="bootstrap-3.1.1\test-infra\README.md" />
+    <Content Include="bootstrap-3.1.1\test-infra\s3_cache.py" />
+    <Content Include="bootstrap-3.1.1\test-infra\sauce_browsers.yml" />
+    <Content Include="bootstrap-3.1.1\test-infra\uncached-npm-install.sh" />
+    <Content Include="bootstrap-3.1.1\_config.yml" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\113170.jpg" />
+    <Content Include="Images\1262249393-1.jpg" />
+    <Content Include="Images\16.jpg" />
+    <Content Include="Images\361819-CARTERS-2013.jpg" />
+    <Content Include="Images\61065.jpeg" />
+    <Content Include="Images\911904128.jpg" />
+    <Content Include="Images\ab0a36b55d4b82391e9d0e110fed29a5.jpg" />
+    <Content Include="Images\AF13_r375_04.jpg" />
+    <Content Include="Images\appliances.jpg" />
+    <Content Include="Images\car.jpg" />
+    <Content Include="Images\cars2 %284%29.jpg" />
+    <Content Include="Images\cell-phones.jpg" />
+    <Content Include="Images\close-deal.jpg" />
+    <Content Include="Images\derbi_boulevard_two_scooter-pictures_4.jpg" />
+    <Content Include="Images\efefdddd0b661b9e8b4b8a0b6edb4f86.png" />
+    <Content Include="Images\elc.jpg" />
+    <Content Include="Images\ferra.jpg" />
+    <Content Include="Images\front-motorcycle-wallpaper-2560x1600.jpg" />
+    <Content Include="Images\GMC.jpg" />
+    <Content Include="Images\images %2829%29.jpg" />
+    <Content Include="Images\jeep.jpg" />
+    <Content Include="Images\log.jpg" />
+    <Content Include="Images\logout-icon.png" />
+    <Content Include="Images\LoneStarBridge-450.jpg" />
+    <Content Include="Images\menu-top.png" />
+    <Content Include="Images\MOTO.jpg" />
+    <Content Include="Images\motoc.jpg" />
+    <Content Include="Images\motorcyles-front-end_33415951.jpg" />
+    <Content Include="Images\plus.jpg" />
+    <Content Include="Images\ProAce-2.jpg" />
+    <Content Include="Images\search-button.gif" />
+    <Content Include="Images\Search-icon %282%29.png" />
+    <Content Include="Images\searchbg.png" />
+    <Content Include="Images\sofa.jpg" />
+    <Content Include="Images\sprites.png" />
+    <Content Include="Images\truck.JPG" />
+    <Content Include="Images\vespalx.jpg" />
+    <Content Include="Images\WELCOM.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\car.js" />
+    <Content Include="Scripts\commerciale.js" />
+    <Content Include="Scripts\jeep.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Motorcycle.js" />
+    <Content Include="Scripts\Scondhand.js" />
+    <Content Include="Scripts\Scooter.js" />
+    <Content Include="Scripts\Trucks.js" />
+    <Content Include="Scripts\yad2.cars.js" />
+    <Content Include="Scripts\yad2.commerciale.js" />
+    <Content Include="Scripts\yad2.Jeep.js" />
+    <Content Include="Scripts\yad2.Motorcycle.js" />
+    <Content Include="Scripts\yad2.Scooter.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Style\MainStyle.css" />
+    <Content Include="Style\StyleSheet1.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Cars\Index.cshtml" />
+    <Content Include="Views\Motorcycle\Index.cshtml" />
+    <Content Include="Views\Trucks\Index.cshtml" />
+    <Content Include="Views\Scooter\Index.cshtml" />
+    <Content Include="Views\Secondhand\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\PersonalArea\index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Commercial\Index.cshtml" />
+    <Content Include="Views\Jeep\Index.cshtml" />
+    <Content Include="Views\Registration\Registration.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{d3a9d158-d68b-4bcd-a3ef-bee69c8e67d3}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructur\Infrastructure.Web.csproj">
+      <Project>{acebc78e-0003-4c0e-95b5-ece439b71e7d}</Project>
+      <Name>Infrastructure.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yad2.Controllers\Yad2.Controllers.csproj">
+      <Project>{1a9e5dfc-276a-4b42-a4d7-4e129a63f802}</Project>
+      <Name>Yad2.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yad2.EFRepositories\Yad2.EFRepositories.csproj">
+      <Project>{5da3ce12-496c-40cf-aadc-d4b59d14b691}</Project>
+      <Name>Yad2.EFRepositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yad2.Model\Yad2.Model.csproj">
+      <Project>{6f28a3da-0e01-44be-bf08-b46ca960d047}</Project>
+      <Name>Yad2.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yad2.Services\Yad2.Services.csproj">
+      <Project>{b8413469-0d0b-4ec8-b155-54be1787809f}</Project>
+      <Name>Yad2.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57429</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57425/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

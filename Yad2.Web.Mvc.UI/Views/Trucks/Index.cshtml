@@ -1,0 +1,301 @@
+﻿@model Yad2.Services.Messages.GetListResponse<Yad2.Model.Entities.Trucks>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<style>
+    select, input {
+        direction: rtl;
+    }
+
+        select[name=rgn], select[name=man], select[name=mdl] {
+            width: 140px;
+        }
+
+        input[name=pmin], input[name=pmax] {
+            width: 90px;
+        }
+
+        select[name=ymin], select[name=ymax] {
+            width: 60px;
+        }
+
+        select[name=gt] {
+            width: 70px;
+        }
+
+        input[name=txt] {
+            width: 140px;
+        }
+
+        input[type=submit] {
+            width: 125px;
+            height: 65px;
+        }
+
+    .filter-outer-tbl {
+        border-collapse: collapse;
+        text-align: center;
+        vertical-align: central;
+        background: #808080;
+    }
+
+        .filter-outer-tbl td {
+            margin: 0 0 0 2px;
+        }
+
+    .adv-filter-opt {
+        float: left;
+    }
+
+    .simple-filter-opt {
+        float: left;
+        margin: 0 0 0 3px;
+    }
+
+        .adv-filter-opt a, .simple-filter-opt a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            background: #808080;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+            border: 1px solid #808080;
+            border-bottom: none;
+        }
+
+    .filter-field-title {
+        font-size: 12px;
+    }
+
+    .filter-upper-row {
+    }
+
+    .items-tbl {
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 30px;
+        border-collapse: collapse;
+    }
+
+        .items-tbl tbody tr {
+            cursor: pointer;
+        }
+
+            .items-tbl tbody tr:hover {
+                background: #b9b9b9;
+            }
+
+    .paging {
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+        .paging a {
+            text-align: center;
+            display: inline-block;
+            width: 25px;
+            color: white;
+            background: #414141;
+            border: 1px solid #b5b5b5;
+            border-radius: 10px;
+            margin: 0 auto;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+            .paging a:hover {
+                background: #ff6a00;
+            }
+
+            .paging a.selected {
+                background: #e5b363;
+            }
+</style>
+
+
+
+
+<h2>Cars</h2>
+
+@*
+    pmin - min price
+    pmax - max price
+*@
+
+@using (Html.BeginForm("Index", "Trucks", FormMethod.Get))
+{
+    <div class="filter-inner-wrapper">
+        <div class="filter-upper-row">
+            <div class="adv-filter-opt"><a href="kavascript:void(0);">חיפוש מתקדם</a></div>
+            <div class="simple-filter-opt"><a href="kavascript:void(0);">חיפוש רגיל</a></div>
+        </div>
+        <table align="center" class="filter-outer-tbl">
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="submit" value="שלח" />
+                    </td>
+                    <td>
+                        <table class="cars-filter">
+                            <tbody>
+                                <tr>
+                                    <td class="simple-filter"><div class="filter-field-title">עד מחיר</div><div class="filter-field-input"><input type="text" name="pmax" /></div></td>
+                                    <td class="simple-filter"><div class="filter-field-title">ממחיר</div><div class="filter-field-input"><input type="text" name="pmin" /></div></td>
+                                    <td class="simple-filter"><div class="filter-field-title">תיבת הילוכים</div><div class="filter-field-input"><select name="gt"></select></div></td>
+                                    <td class="simple-filter"><div class="filter-field-title">עד שנה</div><div class="filter-field-input"><select name="ymax"></select></div></td>
+                                    <td class="simple-filter"><div class="filter-field-title">משנה</div><div class="filter-field-input"><select name="ymin"></select></div></td>
+                                    <td class="simple-filter"><div class="filter-field-title">דגם</div><div class="filter-field-input"><select name="mdl" id="mdl"></select></div></td>
+                                    <td class="simple-filter"><div class="filter-field-title">יצרן</div><div class="filter-field-input"><select name="man" id="man"></select></div></td>
+                                    <td class="simple-filter">
+                                        <div class="filter-field-title">איזור</div><div class="filter-field-input">
+                                            <select name="reg">
+                                                @*<option>כל האיזורים</option>
+                                                    @{
+                                                        int reg = 0;
+                                                        int.TryParse(Request.QueryString["reg"],out reg);
+                                                    }
+                                                    @foreach(var mainReg in (Model.SettingsObject as Yad2.Services.SettingsObjects.CarSettingsObject).Regions)
+                                                    {
+                                                        if (!mainReg.PId.HasValue)
+                                                        {
+                                                            if(mainReg.Id == reg) { <option selected="selected"  style="color:red;" value="@mainReg.Id" >@mainReg.Name</option> }
+                                                            else { <option  style="color:red;" value="@mainReg.Id" >@mainReg.Name</option> }
+
+                                                            foreach(var subreg in (Model.SettingsObject as Yad2.Services.SettingsObjects.CarSettingsObject).Regions)
+                                                            {
+                                                                if (subreg.PId.HasValue && subreg.PId == mainReg.Id)
+                                                                {
+                                                                    if (subreg.Id == reg) {  <option selected="selected" value="@subreg.Id" >@subreg.Name</option> }
+                                                                    else { <option value="@subreg.Id" >@subreg.Name</option> }
+                                                                }
+                                                            }
+                                                        }
+                                                    }*@
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td><div class="filter-field-title">טקסט חופשי:</div><div class="filter-field-input"><input type="text" name="txt" id="text" /></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><span>הצג מודעות עם מחיר בלבד</span> <input type="checkbox" name="chk1" /> </td>
+                                    <td><span>הצג מודעות עם תמונות בלבד</span> <input type="checkbox" name="chk2" /> </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+}
+
+<table class="items-tbl table table-hover info" align="center">
+    <thead>
+        <tr>
+            <th></th>
+            <th>תאריך</th>
+            <th>תמונה</th>
+            <th>איזור בארץ</th>
+            <th>ת.הילוכים</th>
+            <th>יד</th>
+            <th>מחיר</th>
+            <th>שנה</th>
+            <th>נפח</th>
+            <th>דגם</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (string[] fields in Model.Items)
+        {
+            <tr data-id="@fields[0]">
+                <td>
+                    לפרטים
+                </td>
+                <td>
+                    @fields[9]
+                </td>
+                <td>
+                    @if (fields[8] /* pics */ == "true")
+                    {
+                        <img src="" alt="" />
+                    }
+                </td>
+                <td>
+                    @fields[7]
+                </td>
+                <td>
+                    @fields[6]
+                </td>
+                <td>
+                    @fields[5]
+                </td>
+                <td>
+                    @fields[4]
+                </td>
+                <td>
+                    @fields[3]
+                </td>
+                <td>
+                    @fields[2]
+                </td>
+                <td>
+                    @fields[1]
+                </td>
+                <td>*</td>
+            </tr>
+            <tr class="post-info" style="display:none;">
+                <td colspan="2"></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<div class="paging">
+    @Html.PageLinks(Model.CurrentPage, Model.TotalPages, x => Url.Action("Index", "Trucks", new
+{
+
+    p = x,
+    ipp = Model.ItemsPerPage,
+    iadv = (Model.FilterObject as Yad2.Services.Filters.TrucksFilter).IsAdvancedFilter,
+    // gt = (Model.FilterObject as Yad2.Services.Filters.TrucksFilter).GearType,
+    pmin = (Model.FilterObject as Yad2.Services.Filters.TrucksFilter).PriceMin,
+    pmax = (Model.FilterObject as Yad2.Services.Filters.TrucksFilter).PriceMax,
+    man = (Model.FilterObject as Yad2.Services.Filters.TrucksFilter).Manufacturer,
+    mdl = (Model.FilterObject as Yad2.Services.Filters.TrucksFilter).Model,
+    reg = (Model.FilterObject as Yad2.Services.Filters.TrucksFilter).RegionId,
+}))
+</div>
+
+
+
+@section scripts {
+<script src="~/Scripts/Trucks.js"></script>
+    
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @*@Scripts.Render("~/bundles/yad2.cars")*@
+}
